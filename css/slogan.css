@@ -1,0 +1,120 @@
+.slogan {
+    /* width: 100%;
+    height: 920px; */
+    /* padding-top: 210px; */
+    padding-top: 170px;
+    /* margin-top: -210px; */
+    padding-bottom: 220px;
+    /* padding: 200px 0px; */
+    /* padding-bottom: 220px; */
+    /* z-index: 3; */
+    position: sticky;
+    top: 0px;
+    /* top: 20vh; */
+    height: 110vh;
+
+    /* background: #eeeeee; */
+    background-color: #F5F5F5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .slogan-relative {
+    position: relative;
+    top: -150px;
+} */
+
+.slogan__text-wrapper {
+
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 20px;
+
+    color: #A8A8A8;
+    font-size: 98px;
+    font-weight: 500;
+    line-height: 126.5%;
+    letter-spacing: -2.45px;
+    text-transform: uppercase;
+    text-align: justify;
+    cursor: pointer;
+    transition: 0.3s ease; */
+    margin-left: -8px;
+}
+
+.slogan__text-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 20px;
+
+    color: #cecece;
+    font-size: 86px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -2.45px;
+    text-transform: uppercase;
+    text-align: justify;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+.slogan__text-first_line,
+.slogan__text-second_line,
+.slogan__text-third_line,
+.slogan__text-fourth_line,
+.slogan__text-fifth_line {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    width: 100%;
+}
+
+.slogan__text-fourth_line {
+    column-gap: 20px;
+}
+
+.slogan__text-first_line .first_line-1:hover,
+.slogan__text-first_line .first_line-2:hover,
+.slogan__text-first_line .first_line-3:hover,
+.slogan__text-first_line .first_line-4:hover,
+.slogan__text-first_line .first_line-5:hover,
+.slogan__text-second_line .second_line-1:hover,
+.slogan__text-second_line .second_line-2:hover,
+.slogan__text-second_line .second_line-3:hover,
+.slogan__text-second_line .second_line-4:hover,
+.slogan__text-third_line .third_line-1:hover,
+.slogan__text-third_line .third_line-2:hover,
+.slogan__text-third_line .third_line-3:hover, 
+.slogan__text-fourth_line .fourth_line-1:hover,  
+.slogan__text-fourth_line .fourth_line-2:hover,  
+.slogan__text-fourth_line .fourth_line-3:hover,  
+.slogan__text-fourth_line .fourth_line-4:hover,
+.slogan__text-fifth_line .fifth_line-1:hover,
+.slogan__text-fifth_line .fifth_line-2:hover {
+    /* color: #1B1B1C; */
+    color: #FF6831;
+    transition: 0.3s ease;
+}
+
+
+._animat-show {
+    transform: translate(0px,120%);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s;
+}
+
+._animat-show._active-animat,
+._active-animat ._animat-show {
+    transform: translate(0px,0px);
+    opacity: 1;
+}

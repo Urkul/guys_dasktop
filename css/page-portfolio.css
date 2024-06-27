@@ -1,0 +1,115 @@
+.page-portfolio {
+    margin-top: 60px;
+    padding-bottom: 144px;
+    background-color: var(--bg-color-1);
+}
+
+.list-portfolio__title {
+    padding-top: 20px;
+    font-weight: 400;
+    font-size: 98px;
+    text-transform: uppercase;
+    color: var(--dark-text);
+}
+
+.list-portfolio__tags {
+    padding-bottom: 35px;
+    width: 50%;
+}
+
+.list-portfolio__tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.portfolio__tags-link {
+    border: 1px solid var(--grey);
+    border-radius: 30px;
+    padding: 6px 12px;
+    padding-top: 7px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--grey);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.portfolio__tags-link:hover,
+.portfolio__tags-link:focus {
+    color: var(--bg-color-1);
+    border: 1px solid var(--bg-color-1);
+}
+
+.portfolio__tags-link.portfolio-active {
+    color: var(--bg-color-1);
+    border: 1px solid var(--bg-color-1);
+    background-color: #FF6831;
+}
+
+.list-portfolio__items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-column-gap: 24px;
+    grid-row-gap: 45px;
+}
+
+.list-portfolio__item-wrapper {
+    position: relative;
+}
+
+.list-portfolio__item {
+}
+
+.list-portfolio__item-bg {
+    border-radius: 5px;
+    max-width: 660px;
+    height: 578px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.list-portfolio__item-bg.poligon_portfolio__item {
+    clip-path: polygon(0 24%, 0 18%, 0 12%, 0 7%, 0 0, 5% 0, 11% 0, 16% 0, 22% 0, 78% 0, 83% 0, 88% 0, 94% 0, 100% 0, 100% 6%, 100% 12%, 100% 19%, 100% 24%, 100% 76%, 100% 82%, 100% 88%, 100% 94%, 100% 100%, 94% 100%, 88% 100%, 83% 100%, 78% 100%, 21% 100%, 16% 100%, 10% 100%, 4% 100%, 0 100%, 0 94%, 0 88%, 0 81%, 0 76%);
+}
+
+.list-portfolio__item-bg:hover.poligon_portfolio__item {
+    clip-path: polygon(0 24%, 5% 24%, 5% 18%, 11% 18%, 11% 12%, 16% 12%, 16% 6%, 22% 6%, 22% 0, 78% 0, 78% 6%, 83% 6%, 83% 12%, 89% 12%, 89% 18%, 95% 18%, 95% 24%, 100% 24%, 100% 76%, 94% 76%, 94% 82%, 89% 82%, 89% 88%, 83% 88%, 83% 94%, 78% 94%, 78% 100%, 21% 100%, 21% 94%, 16% 94%, 16% 88%, 10% 88%, 10% 82%, 5% 82%, 5% 76%, 0 76%);
+    box-shadow: inset 0px 0px 100px 10px rgba(79, 79, 79, 0.75);
+
+}
+
+.list-portfolio__item-bg:hover {
+    
+}
+
+.list-portfolio__item-name {
+    padding-top: 21px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    color: var(--dark-text);
+}
+
+.list-portfolio__item-links {
+    position: absolute;
+    /* top: 32px; */
+    top: 37px;
+    left: 43px;
+    display: flex;
+    gap: 8px;
+
+}
+
+.list-portfolio__item-link {
+    border-radius: 30px;
+    padding: 6px 12px;
+    padding-top: 7px;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: var(--dark-text);
+}

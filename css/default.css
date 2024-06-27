@@ -1,0 +1,316 @@
+:root {
+	--dark-bg: #1b1b1c;
+	--bg-colour: #eee;
+	--grey: #a8a8a8;
+	--dark-text: #151515;
+	--bg-color-1: #f5f5f5;
+	--dark-bg-1: #090909;
+	--accent: #ff6831;
+
+    --font-family: "Fixel", sans-serif;
+    --second-family: "Inter", sans-serif;
+    --third-family: "Unbounded", sans-serif;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+    border: none;
+}
+
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    /* scroll-behavior: smooth; */
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+    /* cursor: pointer; */
+}
+
+body {
+    min-width: 320px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--dark-bg-1);
+    background-color: var(--bg-color-1);
+    /* color: #151515; */
+    /* background-color: #eeeeee; */
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+    scroll-behavior: smooth;
+}
+
+.visually-hidden {
+    position: fixed;
+    transform: scale(0);
+}
+
+.container {
+    max-width: 1374px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.none {
+    display: none;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+.fixed-section {
+    position: sticky;
+    top: 0;
+    opacity: 0;
+}
+
+
+/* services links */
+
+.all:hover,
+.all:focus {
+    background-color: #FF6831;
+}
+.branding:hover,
+.branding:focus {
+    background-color: #2D82B7;
+}
+.video_production:hover,
+.video_production:focus {
+    background-color: #3BCFB1;
+}
+.design:hover,
+.design:focus {
+    background-color: #FFACE4;
+}
+.d3:hover,
+.d3:focus {
+    background-color: #440381;
+}
+.motion:hover,
+.motion:focus {
+    background-color: #C2085A;
+}
+.website:hover,
+.website:focus {
+    background-color: #279AF1;
+}
+.social_media:hover,
+.social_media:focus {
+    background-color: #098754;
+}
+.package:hover,
+.package:focus {
+    background-color: #DC5ABA;
+}
+.logo:hover,
+.logo:focus {
+    background-color: #A9CF00;
+}
+.stand_event:hover,
+.stand_event:focus {
+    background-color: #104B5F;
+}
+.merch:hover,
+.merch:focus {
+    background-color: #9A241C;
+}
+.igaming:hover,
+.igaming:focus {
+    background-color: #F3BF07;
+}
+.horeca:hover,
+.horeca:focus {
+    background-color: #9BA2FF;
+}
+.it:hover,
+.it:focus {
+    background-color: #4E4087;
+}
+.b2b:hover,
+.b2b:focus {
+    background-color: #CD2323;
+}
+.b2c:hover,
+.b2c:focus {
+    background-color: #D1ACFF;
+}
+.naming:hover,
+.naming:focus {
+    background-color: #AC2DB7;
+}
+.game_design:hover,
+.game_design:focus {
+    background-color: #005FCF;
+}
+.identics:hover,
+.identics:focus {
+    background-color: #3d9903;
+}
+
+
+/* cursor */
+
+.cursor_wrapper {
+
+}
+
+#cursor, #aura {
+    position: absolute;
+    border-radius: 100%;
+    transition: .5s cubic-bezier(.75,-1.27,.3,2.33) transform, .2s cubic-bezier(.75,-1.27,.3,2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    z-index: 50;
+    display: none;
+
+    /* $_hidden {
+        transform: scale(.001);
+    } */
+}
+
+#cursor {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 18, 103, 1);
+
+    transform: scale(1);
+}
+
+#aura {
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 18, 103, .2);
+    background-color: rgba(255, 18, 103, .6);
+    transform: translate(5px, 5px);
+}
+
+.cursor-hidden {
+    display: none;
+}
+
+#cursor.cursor-hidden, 
+#aura.cursor-hidden {
+    transform: scale(.001);
+}
+
+#cursor.cursor_active {
+    opacity: 0;
+    transform: scale(0);
+}
+
+#aura.cursor_active {
+    border: 1.2px solid rgba(255, 18, 103, .6);
+    /* transform: scale(1.3); */
+    transform: scale(.4);
+}
+
+
+
+/* кнопка на верх */
+
+.scroll-up {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    color: #cecece;
+    cursor: pointer;
+    visibility: hidden;
+    border-radius: 5px;
+    /* border-radius: 0 5px 0 5px; */
+    box-shadow: inset 0 0 0 4px #cecece;
+    opacity: 0;
+    transition: .25s;
+    transform: translateY(25px);
+}
+
+.scroll-up::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    padding-bottom: 0px;
+    content: '↑';
+}
+
+.scroll-up:hover {
+    color: #e88c03;
+}
+
+.scroll-up--active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-up__svg-path {
+    box-sizing: border-box;
+    fill: none;
+    stroke: #e88c03;
+    stroke-width: 5px;
+    transition: .25s;
+}
+
+
+
+/* SVG Hover portfolio */
+
+/* .dots {
+	display: block;
+}
+
+.dots svg.mask {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	mix-blend-mode: screen;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.dots svg.mask ellipse {
+	will-change: transform;
+	transform-box: fill-box;
+	-webkit-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
+} */
+
+

@@ -1,0 +1,217 @@
+.clients {
+    padding-top: 168px;
+    position: relative;
+    /* position: sticky;
+    top: 0; */
+    background-color: #eeeeee;
+}
+
+.clients__container {
+    /* position: relative; */
+}
+
+.clients__title {
+    font-size: 98px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #151515;
+}
+
+.clients__slider-block {
+    padding-top: 80px;
+    position: relative;
+}
+
+.clients__slider {
+}
+
+.clients__slider-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.clients__slider-wrapper 
+.client-item-1,
+.clients__slider-wrapper 
+.client-item-2,
+.clients__slider-wrapper 
+.client-item-3,
+.clients__slider-wrapper 
+.client-item-4,
+.clients__slider-wrapper 
+.client-item-5,
+.clients__slider-wrapper 
+.client-item-6,
+.clients__slider-wrapper 
+.client-item-7,
+.clients__slider-wrapper 
+.client-item-8,
+.clients__slider-wrapper 
+.client-item-9,
+.clients__slider-wrapper 
+.client-item-10 {
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-1 {
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-2 {
+    opacity: 1;
+    transition: all 0.3s ease 0.2s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-3 {
+    opacity: 1;
+    transition: all 0.3s ease 0.4s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-4 {
+    opacity: 1;
+    transition: all 0.3s ease 0.6s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-5 {
+    opacity: 1;
+    transition: all 0.3s ease 0.8s;
+}
+
+.clients__slider-wrapper._active-animat-client .client-item-6 {
+    opacity: 1;
+    transition: all 0.3s ease 1.0s;
+}
+.clients__slider-wrapper._active-animat-client .client-item-7 {
+    opacity: 1;
+    transition: all 0.3s ease 1.2s;
+}
+.clients__slider-wrapper._active-animat-client .client-item-8 {
+    opacity: 1;
+    transition: all 0.3s ease 1.4s;
+}
+.clients__slider-wrapper._active-animat-client .client-item-9 {
+    opacity: 1;
+    transition: all 0.3s ease 1.6s;
+}
+.clients__slider-wrapper._active-animat-client .client-item-10 {
+    opacity: 1;
+    transition: all 0.3s ease 1.8s;
+}
+
+
+
+
+.clients__slider-item {
+}
+
+.clients__slider-item-img {
+    width: 80px;
+    height: 80px;
+}
+
+.clients__slider-item-img img {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.clients__slider-item-description {
+    padding-top: 32px;
+}
+
+.clients__slider-description-name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 110%; /* 26.4px */
+    color: #151515;
+}
+
+.clients__slider-description-text {
+    padding-top: 12px;
+    height: 242px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    color: #151515;
+}
+
+.clients__slider-btn-wrapper {
+    position: absolute;
+    right: 0;
+    top: -92px;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.clients__slider-btn {
+    position: relative;
+}
+
+.clients__slider-btn-prev,
+.clients__slider-btn-next {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    /* opacity: 0.6; */
+    border: 2px solid #A8A8A8;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.clients__slider-btn-prev:hover,
+.clients__slider-btn-next:hover {
+    border: 2px solid #151515;
+}
+
+.clients__slider-btn-prev .slider__btn-prev {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    border: solid #A8A8A8;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(136deg);
+    -webkit-transform: rotate(136deg);
+    transition: 0.2s ease-in-out;
+}
+
+.clients__slider-btn-next .slider__btn-next {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    border: solid #A8A8A8;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: 0.2s ease-in-out;
+}
+
+.clients__slider-btn-prev:hover .slider__btn-prev {
+    border: solid #151515;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(136deg);
+    -webkit-transform: rotate(136deg);
+}
+
+.clients__slider-btn-next:hover .slider__btn-next {
+    border: solid #151515;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}

@@ -644,13 +644,19 @@
     .case-similar-projects__content .portfolio__link-wrapper.block {
         padding-top: 90px;
         padding-bottom: 50px;
-        display: block;
+        
+        display: flex;
+        justify-content: center;
     }  
     
     .case-similar-projects__content .portfolio__link-wrapper.block a {
+        display: flex;
+        justify-content: center;
+
         border-radius: 100px;
         padding: 28px 110px;
-        width: 100%;
+        max-width: 358px;
+        /* width: 100%; */
         height: 82px; 
         background: var(--dark-bg-1);
 
@@ -662,3 +668,11 @@
     }
 
 }
+
+/* @media (max-width: 390px) {
+    .case-similar-projects__content .portfolio__link-wrapper.block a {
+        padding: 9px 24px;
+        width: 358px;
+        height: 82px;
+    }
+} */

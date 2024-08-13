@@ -2,80 +2,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // slider portfolio
 
-    // const swiperPortfolio = new Swiper('.portfolio__slider', {
-    //     loop: true,
-    //     navigation: {
-    //         prevEl: '.portfolio__slider-btn-prev',
-    //         nextEl: '.portfolio__slider-btn-next'
-    //     },
+    const swiperPortfolio = new Swiper('.portfolio__slider', {
+        loop: true,
+        navigation: {
+            prevEl: '.portfolio__slider-btn-prev',
+            nextEl: '.portfolio__slider-btn-next'
+        },
 
-    //     breakpoints: {
-    //         1025: {
-    //             slidesPerView: 1.815,
-    //             spaceBetween: 24,
-    //         },
-    //         920: {
-    //             slidesPerView: 1.5,
-    //             spaceBetween: 18,
-    //         },
-    //         820: {
-    //             slidesPerView: 1.4,
-    //             spaceBetween: 16,
-    //         },
-    //         640: {
-    //             slidesPerView: 1.3,
-    //             spaceBetween: 14,
-    //         },
-    //         320: {
-    //             slidesPerView: 1,
-    //             spaceBetween: 10,
-    //         }
-    //     },
+        breakpoints: {
+            1025: {
+                slidesPerView: 1.815,
+                spaceBetween: 24,
+            },
+            920: {
+                slidesPerView: 1.5,
+                spaceBetween: 18,
+            },
+            820: {
+                slidesPerView: 1.4,
+                spaceBetween: 16,
+            },
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 14,
+            },
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        },
 
-    //     simulateTouch: true,
-    //     touchRatio: 1,
-    //     touchAngle: 45,
-    //     // grabCursor: true,
+        simulateTouch: true,
+        touchRatio: 1,
+        touchAngle: 45,
+        // grabCursor: true,
 
-    //     keyboard: {
-    //         enabled: true,
-    //         onlyInViewport: true,
-    //         pageUpDown: true,
-    //     },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+            pageUpDown: true,
+        },
 
-    //     // mousewheel: {
-    //     //     sensitivity: 1,
-    //     // },
+        // mousewheel: {
+        //     sensitivity: 1,
+        // },
 
-    //     autoHeight: true,
+        autoHeight: true,
 
-    //     parallax: true,
+        parallax: true,
 
-    //     autoplay: {
-    //         delay: 3500,
-    //     },
-    //     speed: 1000,
+        autoplay: {
+            delay: 3500,
+        },
+        speed: 1000,
 
-    //     // freeMode: true,
+        // freeMode: true,
 
-    //     effect: 'slide',
+        effect: 'slide',
 
     
-    //     // stop slider portfolio
+        // stop slider portfolio
 
-    //     on: {
-    //         init() {
-    //             this.el.addEventListener('mouseenter', () => {
-    //                 this.autoplay.stop();
-    //             });
+        on: {
+            init() {
+                this.el.addEventListener('mouseenter', () => {
+                    this.autoplay.stop();
+                });
 
-    //             this.el.addEventListener('mouseleave', () => {
-    //                 this.autoplay.start();
-    //             });
-    //         }
-    //     },
+                this.el.addEventListener('mouseleave', () => {
+                    this.autoplay.start();
+                });
+            }
+        },
 
-    // });
+    });
     
     // swiperPortfolio.init();
 
@@ -120,6 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log('coordPortfolioSliderWrap: ', coordPortfolioSliderWrap.right);
     const windowWidth = window.innerWidth;
     // console.log('windowWidth: ', windowWidth);
+
+    // if (windowWidth < 461) {
+    //     swiperPortfolio.params.direction = 'vertical'; 
+
+    //     // swiperPortfolio.params.autoplay.stop();
+    // } 
 
 
     mouseX = 0;
@@ -195,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 portfolioNames[i].classList.add('portfolio__description-name-active');
 
             }
-            else if (swiperSlides[i].classList.contains('swiper-slide-next') && navigationFlagNext && !navigationFlag && coordPortfolioName.left > coordPortfolioSliderWrap.right / 2 && coordPortfolioName.right < windowWidth) {
+            else if (swiperSlides[i].classList.contains('swiper-slide-next') && navigationFlagNext && !navigationFlag && coordPortfolioName.left > coordPortfolioSliderWrap.right / 2) {
                 portfolioNames[i].classList.add('portfolio__description-name-active');
             
             }
@@ -358,7 +364,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    
     // const setDataAtrDescrBtn = function () {
     //     for (let i = 0; i < swiperSlides.length; i++) {
 
@@ -381,20 +386,20 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }
     // }
 
-    // swiperPortfolio.on('slideChange', function () { 
-    //     // settingDescriptionWidth();
-    //     descriptionNameActive();
-    //     // parallaxDescrBtn();
-    //     // setDataAtrDescrBtn();
+    swiperPortfolio.on('slideChange', function () { 
+        // settingDescriptionWidth();
+        descriptionNameActive();
+        // parallaxDescrBtn();
+        // setDataAtrDescrBtn();
         
-    // });
+    });
 
-    // if (check === true) {
-    //     swiperPortfolio.on('slideChange', function () { 
-    //         parallaxDescrBtn();      
-    //     });
+    if (check === true) {
+        swiperPortfolio.on('slideChange', function () { 
+            parallaxDescrBtn();      
+        });
 
-    // }
+    }
 
     // if (checkPrev === true) {
     //     swiperPortfolio.on('slideChange', function () { 
@@ -407,31 +412,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
 
-    // document.querySelector('.portfolio__slider-btn-next').addEventListener('click', () => {
-    //     checkNext = true
+    document.querySelector('.portfolio__slider-btn-next').addEventListener('click', () => {
+        checkNext = true
 
-    //     if (checkNext === true) {
-    //         swiperPortfolio.on('slideChange', function () { 
-    //             parallaxDescrBtn();  
-    //             // console.log('да');
-    //     });
+        if (checkNext === true) {
+            swiperPortfolio.on('slideChange', function () { 
+                parallaxDescrBtn();  
+                // console.log('да');
+        });
     
-    //     checkNext = false;
-    //     }
-    // });
+        checkNext = false;
+        }
+    });
 
 
-    // document.querySelector('.portfolio__slider-btn-prev').addEventListener('click', () => {
-    //     checkPrev = true
+    document.querySelector('.portfolio__slider-btn-prev').addEventListener('click', () => {
+        checkPrev = true
 
-    //     if (checkPrev === true) {
-    //         swiperPortfolio.on('slideChange', function () { 
-    //             parallaxDescrBtnPrev();      
-    //     });
+        if (checkPrev === true) {
+            swiperPortfolio.on('slideChange', function () { 
+                parallaxDescrBtnPrev();      
+        });
     
-    //     checkPrev = false;
-    //     }
-    // });
+        checkPrev = false;
+        }
+    });
 
 
 
@@ -513,129 +518,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
     
 
-    
-    if (windowWidth >= 461) {
-
-        const swiperPortfolio = new Swiper('.portfolio__slider', {
-            loop: true,
-            navigation: {
-                prevEl: '.portfolio__slider-btn-prev',
-                nextEl: '.portfolio__slider-btn-next'
-            },
-    
-            breakpoints: {
-                1025: {
-                    slidesPerView: 1.815,
-                    spaceBetween: 24,
-                },
-                920: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 18,
-                },
-                820: {
-                    slidesPerView: 1.4,
-                    spaceBetween: 16,
-                },
-                640: {
-                    slidesPerView: 1.3,
-                    spaceBetween: 14,
-                },
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                }
-            },
-    
-            simulateTouch: true,
-            touchRatio: 1,
-            touchAngle: 45,
-            // grabCursor: true,
-    
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-                pageUpDown: true,
-            },
-    
-            // mousewheel: {
-            //     sensitivity: 1,
-            // },
-    
-            autoHeight: true,
-    
-            parallax: true,
-    
-            autoplay: {
-                delay: 3500,
-            },
-            speed: 1000,
-    
-            // freeMode: true,
-    
-            effect: 'slide',
-    
-        
-            // stop slider portfolio
-    
-            on: {
-                init() {
-                    this.el.addEventListener('mouseenter', () => {
-                        this.autoplay.stop();
-                    });
-    
-                    this.el.addEventListener('mouseleave', () => {
-                        this.autoplay.start();
-                    });
-                }
-            },
-    
-        });
-
-        swiperPortfolio.on('slideChange', function () { 
-            // settingDescriptionWidth();
-            descriptionNameActive();
-            // parallaxDescrBtn();
-            // setDataAtrDescrBtn();
-            
-        });
-    
-        if (check === true) {
-            swiperPortfolio.on('slideChange', function () { 
-                parallaxDescrBtn();      
-            });
-    
-        }
-
-        document.querySelector('.portfolio__slider-btn-next').addEventListener('click', () => {
-            checkNext = true
-    
-            if (checkNext === true) {
-                swiperPortfolio.on('slideChange', function () { 
-                    parallaxDescrBtn();  
-                    // console.log('да');
-            });
-        
-            checkNext = false;
-            }
-        });
-    
-    
-        document.querySelector('.portfolio__slider-btn-prev').addEventListener('click', () => {
-            checkPrev = true
-    
-            if (checkPrev === true) {
-                swiperPortfolio.on('slideChange', function () { 
-                    parallaxDescrBtnPrev();      
-            });
-        
-            checkPrev = false;
-            }
-        });
-        
-    }
-
-    
-    
     portfolio.addEventListener('mousemove', e => {
         
         clientX = e.pageX;

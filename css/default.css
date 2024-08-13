@@ -96,82 +96,103 @@ body {
 .all:hover,
 .all:focus {
     background-color: #FF6831;
+    color: var(--bg-color-1);
+    /* border: 1px solid var(--bg-color-1); */
 }
 .branding:hover,
 .branding:focus {
-    background-color: #2D82B7;
+    background-color: #7FCEFF;
+    color: var(--bg-color-1);
 }
 .video_production:hover,
 .video_production:focus {
-    background-color: #3BCFB1;
+    background-color: #41EAC8;
+    color: var(--bg-color-1);
 }
 .design:hover,
 .design:focus {
-    background-color: #FFACE4;
+    background-color: #F68DD4;
+    color: var(--bg-color-1);
 }
 .d3:hover,
 .d3:focus {
-    background-color: #440381;
+    background-color: #C59AED;
+    color: var(--bg-color-1);
 }
 .motion:hover,
 .motion:focus {
-    background-color: #C2085A;
+    background-color: #EA70A6;
+    color: var(--bg-color-1);
 }
 .website:hover,
 .website:focus {
-    background-color: #279AF1;
+    background-color: #75B9ED;
+    color: var(--bg-color-1);
 }
 .social_media:hover,
 .social_media:focus {
-    background-color: #098754;
+    background-color: #67D9AB;
+    color: var(--bg-color-1);
 }
 .package:hover,
 .package:focus {
-    background-color: #DC5ABA;
+    background-color: #E7A3A3;
+    color: var(--bg-color-1);
 }
 .logo:hover,
 .logo:focus {
-    background-color: #A9CF00;
+    background-color: #CBDE76;
+    color: var(--bg-color-1);
 }
 .stand_event:hover,
 .stand_event:focus {
-    background-color: #104B5F;
+    background-color: #6FC2DE;
+    color: var(--bg-color-1);
 }
 .merch:hover,
 .merch:focus {
-    background-color: #9A241C;
+    background-color: #DDB4B4;
+    color: var(--bg-color-1);
 }
 .igaming:hover,
 .igaming:focus {
-    background-color: #F3BF07;
+    background-color: #F7C39E;
+    color: var(--bg-color-1);
 }
 .horeca:hover,
 .horeca:focus {
-    background-color: #9BA2FF;
+    background-color: #A3A8F1;
+    color: var(--bg-color-1);
 }
 .it:hover,
 .it:focus {
-    background-color: #4E4087;
+    background-color: #B4A7EB;
+    color: var(--bg-color-1);
 }
 .b2b:hover,
 .b2b:focus {
-    background-color: #CD2323;
+    background-color: #F2766D;
+    color: var(--bg-color-1);
 }
 .b2c:hover,
 .b2c:focus {
-    background-color: #D1ACFF;
+    background-color: #6EC8EE;
+    color: var(--bg-color-1);
 }
 .naming:hover,
 .naming:focus {
-    background-color: #AC2DB7;
+    background-color: #769AF7;
+    color: var(--bg-color-1);
 }
 .game_design:hover,
 .game_design:focus {
-    background-color: #005FCF;
+    background-color: #73E192;
+    color: var(--bg-color-1);
 }
 .identics:hover,
 .identics:focus {
     background-color: #3d9903;
+    color: var(--bg-color-1);
 }
 
 

@@ -48,6 +48,10 @@
     margin-left: -8px;
 }
 
+.slogan__text-wrapper.none {
+    display: none;
+}
+
 .slogan__text-item {
     display: flex;
     justify-content: space-between;
@@ -72,7 +76,10 @@
 .slogan__text-second_line,
 .slogan__text-third_line,
 .slogan__text-fourth_line,
-.slogan__text-fifth_line {
+.slogan__text-fifth_line, 
+.slogan__text-sixth_line,
+.slogan__text-seventh_line,
+.slogan__text-eighth_line {
     display: flex;
     justify-content: space-between;
     column-gap: 40px;
@@ -117,4 +124,204 @@
 ._active-animat ._animat-show {
     transform: translate(0px,0px);
     opacity: 1;
+}
+
+
+
+@media (max-width: 1330px) {
+    .slogan__text-item {
+        font-size: 72px;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 1190px) {
+    .slogan__text-item {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .slogan__text-item {
+        font-size: 58px;
+    }
+}
+
+@media (max-width: 960px) {
+    .slogan{
+        height: 100%;
+        padding-top: 110px;
+    }
+
+    .slogan__text-item {
+        font-size: 52px;
+    }
+
+    .slogan__text-first_line, 
+    .slogan__text-second_line, 
+    .slogan__text-third_line, 
+    .slogan__text-fourth_line, 
+    .slogan__text-fifth_line, 
+    .slogan__text-sixth_line,
+    .slogan__text-seventh_line,
+    .slogan__text-eighth_line {
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 891px) {
+    .slogan{
+        padding-top: 80px;
+    }
+
+    .slogan__text-item {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 781px) {
+    .slogan{
+        padding-top: 100px;
+    }
+
+    .slogan__text-item {
+        font-size: 42px;
+    }
+
+    /* .slogan__text-first_line, 
+    .slogan__text-second_line, 
+    .slogan__text-third_line, 
+    .slogan__text-fourth_line, 
+    .slogan__text-fifth_line, 
+    .slogan__text-sixth_line,
+    .slogan__text-seventh_line,
+    .slogan__text-eighth_line {
+        justify-content: start;
+        flex-wrap: wrap;
+        column-gap: 10px;
+    } */
+}
+
+@media (max-width: 720px) {
+    .slogan__text-item {
+        font-size: 36px;
+    }
+
+    /* .slogan__text-first_line, 
+    .slogan__text-second_line, 
+    .slogan__text-third_line, 
+    .slogan__text-fourth_line, 
+    .slogan__text-fifth_line, 
+    .slogan__text-sixth_line,
+    .slogan__text-seventh_line,
+    .slogan__text-eighth_line {
+        justify-content: start;
+        flex-wrap: wrap;
+    } */
+}
+
+@media (max-width: 560px) {
+    .slogan{
+        /* position: relative; */
+        /* padding-top: 190px; */
+        /* height: 100%; */
+        top: 20px;
+    }
+
+    .slogan__text-wrapper {
+        display: none;
+    }
+
+    .slogan__text-wrapper.none {
+        display: block;
+        /* display: inline-block; */
+    }
+
+    .slogan__text-item {
+        /* letter-spacing: 0; */
+        line-height: 150%;
+    }
+
+    .slogan__text-first_line, 
+    .slogan__text-second_line, 
+    .slogan__text-third_line, 
+    .slogan__text-fourth_line, 
+    .slogan__text-fifth_line, 
+    .slogan__text-sixth_line,
+    .slogan__text-seventh_line,
+    .slogan__text-eighth_line {
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    .slogan__text-first_line .first_line-1:hover,
+    .slogan__text-first_line .first_line-2:hover,
+    .slogan__text-first_line .first_line-3:hover,
+    .slogan__text-first_line .first_line-4:hover,
+    .slogan__text-first_line .first_line-5:hover,
+    .slogan__text-second_line .second_line-1:hover,
+    .slogan__text-second_line .second_line-2:hover,
+    .slogan__text-second_line .second_line-3:hover,
+    .slogan__text-second_line .second_line-4:hover,
+    .slogan__text-third_line .third_line-1:hover,
+    .slogan__text-third_line .third_line-2:hover,
+    .slogan__text-third_line .third_line-3:hover, 
+    .slogan__text-fourth_line .fourth_line-1:hover,  
+    .slogan__text-fourth_line .fourth_line-2:hover,  
+    .slogan__text-fourth_line .fourth_line-3:hover,  
+    .slogan__text-fourth_line .fourth_line-4:hover,
+    .slogan__text-fifth_line .fifth_line-1:hover,
+    .slogan__text-fifth_line .fifth_line-2:hover, 
+    .slogan__text-sixth_line .sixth_line-1:hover,
+    .slogan__text-sixth_line .sixth_line-2:hover,
+    .slogan__text-sixth_line .sixth_line-3:hover,
+    .slogan__text-seventh_line .seventh_line-1:hover,
+    .slogan__text-eighth_line .eighth_line-1:hover, 
+    .slogan__text-eighth_line .eighth_line-2:hover {
+        /* color: #1B1B1C; */
+        color: #FF6831;
+        transition: 0.3s ease;
+    }
+
+}
+
+@media (max-width: 540px) {
+    .slogan {
+        /* position: relative; */
+        /* padding-top: 60px; */
+        /* height: 100%; */
+        /* top: -100px; */
+    }
+}
+
+@media (max-width: 520px) {
+    .slogan {
+        /* top: 50px; */
+        top: 30px;
+    }
+}
+
+@media (max-width: 460px) {
+    .slogan {
+        top: 40px;
+    }
+
+    /* .slogan__text-wrapper {
+        display: inline-block;
+    } */
+    
+    .slogan__text-item {
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: #cecece;
+    }
+
+    /* .slogan__text-first_line div {
+        word-break: break-word;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+    } */
 }

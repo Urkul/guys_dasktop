@@ -1,6 +1,6 @@
 .portfolio {
     /* padding-top: 46px; */
-    margin-top: 115%;
+    margin-top: 120%;
     /* margin-top: 100px; */
     /* overflow: hidden; */
     /* cursor: none; */
@@ -18,7 +18,7 @@
 .portfolio__container {
     /* background-color: #1B1B1C; */
     background-color: var(--bg-colour);
-    /* min-height: 690px; */
+    min-height: 690px;
 }
 
 .portfolio__title {
@@ -36,9 +36,6 @@
     display: flex;
     padding-top: 5px;
     gap: 130px;
-
-    justify-content: space-between;
-    padding-bottom: 40px;
 }
 
 .portfolio__link-wrapper {
@@ -79,13 +76,11 @@
 }
 
 .portfolio__slider-block {
-    /* position: absolute;
+    position: absolute;
     left: 255px;
     right: 4px;
     max-width: 1089px;
-    height: 100%; */
-
-    min-width: 0;
+    height: 100%;
 }
 
 .portfolio__slider {
@@ -561,7 +556,7 @@
 
 @media (max-width: 891px) {
     .portfolio__container {
-        /* min-height: 620px; */
+        min-height: 620px;
     }
 
     .portfolio__title {
@@ -603,13 +598,13 @@
 
 @media (max-width: 781px) {
     .portfolio__container {
-        /* min-height: 580px; */
+        min-height: 580px;
     }
 }
 
 @media (max-width: 720px) {
     .portfolio__container {
-        /* min-height: 490px; */
+        min-height: 490px;
     }
 
     .portfolio {
@@ -636,11 +631,6 @@
     /* .portfolio {
         margin-top: 840px;
     } */
-
-    .portfolio__block{
-        gap: 60px;
-    }
-
     .portfolio__slider-btn-wrapper {
         display: none;
     }
@@ -671,15 +661,7 @@
 
 @media (max-width: 460px) {
     .portfolio {
-        /* margin-top: 1000px; */
-        margin-top: 980px;
-    }
-
-    .portfolio__block {
-        flex-direction: column;
-        flex-flow: column-reverse;
-        gap: 90px;
-        padding-bottom: 120px;
+        margin-top: 1000px;
     }
 
     .portfolio__slider-wrapper {
@@ -705,19 +687,17 @@
     }
 
     .portfolio__container {
-        /* min-height: 1560px; */
+        min-height: 1560px;
         /* height: 100%; */
     }
 
     .portfolio__link-wrapper {
-        /* position: absolute;
+        position: absolute;
         bottom: -1280px;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
-        z-index: 5; */
-
-        text-align: center;
+        z-index: 5;
     }
 
     .portfolio__link-wrapper a {
@@ -756,17 +736,17 @@
 
 @media (max-width: 420px) {
     .portfolio__container {
-        /* min-height: 1500px; */
+        min-height: 1500px;
     }
 
     .portfolio__link-wrapper {
-        /* bottom: -1200px; */
+        bottom: -1200px;
     }
 }
 
 @media (max-width: 380px) {
     .portfolio__link-wrapper {
-        /* bottom: -1100px; */
+        bottom: -1100px;
     }
 
     .portfolio__link-wrapper a {

@@ -30,31 +30,28 @@ const guysVideoElement = document.querySelector('.guys__video-block');
 // const screenElement = document.querySelector('.portfolio');
 const portfolio = document.querySelector('.portfolio');
 const container = document.querySelector('.container');
-// const guysBtn = document.querySelector('.guys__slider-btn');
-// const arrow = guysBtn.querySelector('.arrow-right');
+const guysBtn = document.querySelector('.guys__slider-btn');
+const arrow = guysBtn.querySelector('.arrow-right');
 const guysBorder = document.querySelector('.guys__content-border');
-const guysTagline = document.querySelector('.guys__content-tagline');
 
 
 const coordVideo = guysVideoElement.getBoundingClientRect();
 // const coordScreen = screenElement.getBoundingClientRect();
 const containerScreen = container.getBoundingClientRect();
-// const coordGuysBtn = guysBtn.getBoundingClientRect();
-// const coordArrow = arrow.getBoundingClientRect();
+const coordGuysBtn = guysBtn.getBoundingClientRect();
+const coordArrow = arrow.getBoundingClientRect();
 
 const windowWidth = window.innerWidth;
-// console.log('windowWidth: ', windowWidth);
 const windowHeight = window.innerHeight;
-// console.log('windowHeight: ', windowHeight);
 
 const windowInnerWidth = document.documentElement.clientWidth
 
 let widthVideoElem = coordVideo.width;
 let heightVideoElem = coordVideo.height;
-// let widthBtn = coordGuysBtn.width;
-// let heightBtn = coordGuysBtn.height;
-// let arrowWidth = coordArrow.width;
-// let arrowHeight = coordArrow.height;
+let widthBtn = coordGuysBtn.width;
+let heightBtn = coordGuysBtn.height;
+let arrowWidth = coordArrow.width;
+let arrowHeight = coordArrow.height;
 
 // let playActive = true;
 
@@ -72,11 +69,11 @@ const videoBlockScroll = function (target) {
     let indexWidth = widthVideoElem + windowScrollTop;
     let indexHeight = heightVideoElem + windowScrollTop;
 
-    // let indexWidthBtn = widthBtn + windowScrollTop;
-    // let indexHeightBtn = heightBtn + windowScrollTop;
+    let indexWidthBtn = widthBtn + windowScrollTop;
+    let indexHeightBtn = heightBtn + windowScrollTop;
 
-    // let indexArrowWidth = arrowWidth + windowScrollTop; 
-    // let indexArrowHeight = arrowHeight + windowScrollTop; 
+    let indexArrowWidth = arrowWidth + windowScrollTop; 
+    let indexArrowHeight = arrowHeight + windowScrollTop; 
 
 
     if (windowScrollTop > 10 && windowScrollTop < 1200 && indexWidth * 1.2 <= windowInnerWidth) {
@@ -85,17 +82,15 @@ const videoBlockScroll = function (target) {
         // portfolio.classList.remove('portfolio-top');
 
         guysVideoElement.style.width = (indexWidth * 1.2) + 'px';
-        if (indexHeight <= windowHeight - 120) {
+        if (indexHeight <= windowHeight - 150) {
             guysVideoElement.style.height = indexHeight + 'px';
         }
 
         if (windowScrollTop > 10 && windowScrollTop < 200) {
             // guysBorder.style.display = 'block';
             guysBorder.style.opacity = '1';
-            guysTagline.style.opacity = '1';
         } else if (windowScrollTop >= 200 && windowScrollTop < 1200) {
             guysBorder.style.opacity = '0';
-            guysTagline.style.opacity = '0';
         }
 
         // if (guysVideoElement.style.borderRadius.slice(0, 3).replace(/[^\d]/g, '') > 5 && guysVideoElement.style.borderRadius.slice(0, 3).replace(/[^\d]/g, '') <= 300) {
@@ -106,14 +101,14 @@ const videoBlockScroll = function (target) {
 
         // console.log(parseInt((guysBtn.style.width).match(/\d+/)));
         
-        // guysBtn.style.width = (widthBtn + (indexWidthBtn * 0.038)) + 'px';
-        // guysBtn.style.height = (heightBtn + (indexHeightBtn * 0.038)) + 'px';    
+        guysBtn.style.width = (widthBtn + (indexWidthBtn * 0.038)) + 'px';
+        guysBtn.style.height = (heightBtn + (indexHeightBtn * 0.038)) + 'px';    
 
-        // arrow.style.width = (arrowWidth + (indexArrowWidth * 0.008)) + 'px';
-        // arrow.style.height = (arrowHeight + (indexArrowHeight * 0.008)) + 'px';    
+        arrow.style.width = (arrowWidth + (indexArrowWidth * 0.008)) + 'px';
+        arrow.style.height = (arrowHeight + (indexArrowHeight * 0.008)) + 'px';    
 
-        // arrow.style.borderRightWidth = (indexArrowWidth * 0.0032) + 'px';
-        // arrow.style.borderBottomWidth = (indexArrowWidth * 0.0032) + 'px';    
+        arrow.style.borderRightWidth = (indexArrowWidth * 0.0032) + 'px';
+        arrow.style.borderBottomWidth = (indexArrowWidth * 0.0032) + 'px';    
 
         // if (playActive) {
         //     arrow.style.borderToptWidth = (indexArrowWidth * 0.006) + 'px';
@@ -137,20 +132,20 @@ const videoBlockScroll = function (target) {
 
         // if (windowWidth > containerScreen.width) {
             guysVideoElement.style.width = windowInnerWidth + 'px';
-            guysVideoElement.style.height = (windowHeight - 120) + 'px';
+            guysVideoElement.style.height = (windowHeight - 150) + 'px';
         // } else {
         //     guysVideoElement.style.width = (windowWidth - 30) + 'px';
         //     guysVideoElement.style.height = (windowHeight - 220) + 'px';
         // }
 
-        // guysBtn.style.width = 46 + 'px';
-        // guysBtn.style.height = 46 + 'px';
+        guysBtn.style.width = 46 + 'px';
+        guysBtn.style.height = 46 + 'px';
 
-        // arrow.style.width = 13 + 'px';
-        // arrow.style.height = 13 + 'px';
+        arrow.style.width = 13 + 'px';
+        arrow.style.height = 13 + 'px';
 
-        // arrow.style.borderRightWidth = 3.6 + 'px';
-        // arrow.style.borderBottomWidth = 3.6 + 'px';
+        arrow.style.borderRightWidth = 3.6 + 'px';
+        arrow.style.borderBottomWidth = 3.6 + 'px';
 
         // if (playActive) {
         //     arrow.style.borderTopWidth = 3.6 + 'px';
@@ -173,11 +168,11 @@ const videoBlockScroll = function (target) {
 
         guysVideoElement.style.borderRadius = 300 + 'px'
 
-        // guysBtn.style.width = widthBtn + 'px';
-        // guysBtn.style.height = heightBtn + 'px';
+        guysBtn.style.width = widthBtn + 'px';
+        guysBtn.style.height = heightBtn + 'px';
 
-        // arrow.style.width = arrowWidth + 'px';
-        // arrow.style.height = arrowHeight + 'px';
+        arrow.style.width = arrowWidth + 'px';
+        arrow.style.height = arrowHeight + 'px';
 
 
     }
@@ -198,53 +193,14 @@ const videoBlockScroll = function (target) {
     
 };
 
-// // run function scrolling the page
-// window.addEventListener('scroll', function() {
-//     videoBlockScroll(guysVideoElement);
-// });
-
-// videoBlockScroll(guysVideoElement);
-
-if (windowWidth <= 890 && windowWidth > 860) {
-    guysVideoElement.style.width = windowWidth + 'px';
-    guysVideoElement.style.height = 520 + 'px';
-    // guysVideoElement.style.height = 80 + 'vh';
-    // guysVideoElement.style.top = 85 + 'vh';
-    guysVideoElement.style.top = 460 + 'px';
-}
-else if (windowWidth <= 860 &&  windowWidth > 780) {
-    guysVideoElement.style.width = windowWidth + 'px';
-    guysVideoElement.style.height = 460 + 'px';
-    // guysVideoElement.style.height = 80 + 'vh';
-    guysVideoElement.style.top = 460 + 'px';
-}
-else if (windowWidth <= 780 &&  windowWidth > 720) {
-    guysVideoElement.style.width = windowWidth + 'px';
-    guysVideoElement.style.height = 420 + 'px';
-    // guysVideoElement.style.height = 80 + 'vh';
-    guysVideoElement.style.top = 400 + 'px';
-}
-else if (windowWidth <= 720 &&  windowWidth > 460) {
-    guysVideoElement.style.width = windowWidth + 'px';
-    guysVideoElement.style.height = 360 + 'px';
-    // guysVideoElement.style.height = 80 + 'vh';
-    guysVideoElement.style.top = 400 + 'px';
-}
-else if (windowWidth <= 460) {
-    guysVideoElement.style.width = windowWidth + 'px';
-    guysVideoElement.style.height = 360 + 'px';
-    // guysVideoElement.style.height = 80 + 'vh';
-    guysVideoElement.style.top = 520 + 'px';
-}
-else {
-    
-    // run function scrolling the page
-    window.addEventListener('scroll', function() {
-        videoBlockScroll(guysVideoElement);
-    });
-
+// run function scrolling the page
+window.addEventListener('scroll', function() {
     videoBlockScroll(guysVideoElement);
-}
+});
+
+videoBlockScroll(guysVideoElement);
+
+
 
 // const videoBlock = document.querySelector('.guys__video-block');
 const video = document.querySelector('.video');

@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdownButton = document.querySelector('.dropdown__button');
     const dropdownLink = document.querySelectorAll('.dropdown__list-link');
 
+    const guysTagline = document.querySelector('.guys__content-tagline');
+
     // const productsText = document.querySelector('.products__text-animation');
     const productsTextBlock = document.querySelectorAll('.products__text-block');
     const productsTextSecondBlock = document.querySelectorAll('.products__text-second_block');
@@ -140,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
     // console.log(height);
 
+    const windowWidth = window.innerWidth;
 
     // menu 2 screen
     // const menuScreen = function () {
@@ -276,67 +279,18 @@ document.addEventListener('DOMContentLoaded', function () {
     footerDecorAnim();
 
 
+
     // menu navigation
-    headerBtn.addEventListener('click', () => {
-        headerContainer.classList.add('header__container-mobile');
-        
-        headerSubmit.style.display = 'none';
-        headerSlogan.style.display = 'none';
-        headerNav.style.display = 'block';
+    const navClose = function () {
+        // headerContainer.classList.remove('header__container-mobile');
+        navbar.classList.remove('header__container-mobile');
+        guysTagline.style.display = 'block';
 
-        navIconBtn.style.display = 'none';
-        headerLanguage.style.display = 'block';
-        headerNavClose.style.display = 'block';
-
-        headerNavList.classList.add('black-bg');
-        headerLogo.forEach(function(logo) {
-            logo.style.fill = '#eeeeee';
-        });
-        // stop scroll
-        // document.body.classList.toggle('no-scroll');
-        scrollController.disabledScroll();
-
-        headerNavListItems.forEach(function (item) {
-            item.addEventListener('click', () => {
-                headerContainer.classList.remove('header__container-mobile');
-                headerSubmit.style.display = 'block';
-                headerSlogan.style.display = 'block';
-                headerNav.style.display = 'none';
-        
-                navIconBtn.style.display = 'flex';
-                // headerLanguage.style.display = 'none';
-                headerNavClose.style.display = 'none';
-        
-                headerNavList.classList.remove('black-bg');
-                headerLogo.forEach(function(logo) {
-                    logo.style.fill = '#151515';
-                });
-
-                // if (item.classList.contains('nav__link4') || item.classList.contains('nav__link5')) {
-                //     productsText.style.top = '0vh';
-
-                for (let i = 0; i < productsTextBlock.length; i++){
-                    productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
-
-                    productsImg[i].classList.remove(`img-right${i}`);
-
-                    productsBtn[i].classList.remove(`btn-block_right${i}`);
-
-                    productsBgRigh[i].classList.remove(`bg-right${i}`);
-
-                }
-                // }
-
-                // start scroll
-                // document.body.classList.remove('no-scroll');
-                scrollController.enabledScroll();
-            });
-        });
-    });
-
-    headerNavClose.addEventListener('click', () => {
-        headerContainer.classList.remove('header__container-mobile');
-        headerSubmit.style.display = 'block';
+        if (windowWidth <= 890) {
+            headerSubmit.style.display = 'none';
+        } else {
+            headerSubmit.style.display = 'block';
+        }
         headerSlogan.style.display = 'block';
         headerNav.style.display = 'none';
 
@@ -349,6 +303,8 @@ document.addEventListener('DOMContentLoaded', function () {
             logo.style.fill = '#151515';
         });
 
+        // if (item.classList.contains('nav__link4') || item.classList.contains('nav__link5')) {
+        //     productsText.style.top = '0vh';
 
         for (let i = 0; i < productsTextBlock.length; i++){
             productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
@@ -360,93 +316,227 @@ document.addEventListener('DOMContentLoaded', function () {
             productsBgRigh[i].classList.remove(`bg-right${i}`);
 
         }
+        // }
+
         // start scroll
-        // document.body.classList.toggle('no-scroll');
+        // document.body.classList.remove('no-scroll');
         scrollController.enabledScroll();
-    });
-    
-    
+    }
 
-    // section contacts 
-    // inputmask and validate
-    const phone = document.getElementById('phone');
-    const imPhone = new Inputmask('+3(999)999-99-99');
+    headerBtn.addEventListener('click', () => {
+        // headerContainer.classList.add('header__container-mobile');
+        navbar.classList.add('header__container-mobile');
+        guysTagline.style.display = 'none';
+        // headerSubmit.style.display = 'none';
+        headerSubmit.style.display = 'block';
+        headerSlogan.style.display = 'none';
+        headerNav.style.display = 'block';
 
-    imPhone.mask(phone);
+        navIconBtn.style.display = 'none';
+        // headerLanguage.style.display = 'block';
+        headerLanguage.style.display = 'flex';
+        headerNavClose.style.display = 'block';
 
-    const validator = new JustValidate('.contacts__form', {
-        errorLabelCssClass: 'contacts__input-error',
-        errorLabelStyle: {
-            color: '#E53939',
-        },
-    });
+        headerNavList.classList.add('black-bg');
+        headerLogo.forEach(function(logo) {
+            logo.style.fill = '#eeeeee';
+        });
+        // stop scroll
+        // document.body.classList.toggle('no-scroll');
+        scrollController.disabledScroll();
 
-    validator.addField('#name', [
-        {
-            rule: 'required',
-            errorMessage: 'Вкажіть ваше ім`я',
-        },
-        {
-            rule: 'minLength',
-            value: 2,
-            errorMessage: 'Не менше 2х символів',
-        },
-        {
-            rule: 'maxLength',
-            value: 30,
-            errorMessage: 'Не більше 30 символів',
-        }
-    ]);
-    
-    validator.addField('#phone', [
-        {
-            rule: 'required',
-            errorMessage: 'Вкажіть номер телефону',
-        },
-        {
-            validator: value => {
-                const number = phone.inputmask.unmaskedvalue();
-                return number.length === 10;
-            },
-            errorMessage: 'Неправильний номер телефону',
-        }
-    ]);
-
-    validator.onSuccess((event) => {
-        const form = event.currentTarget;
-
-        const popupThx = document.querySelector('.popup__thx');
-        const popupThxText = document.querySelector('.popup__thx-text');
-    
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: form.title.value,
-                name: form.name.value,
-                phone: form.phone.value,
-                company: form.company.value,
-                email: form.email.value,
-                textarea: form.textarea.value
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                form.reset();
-                // alert(`Спасибо, мы перезвоним вам в течении 10 минут. Ваша заявка № ${data.id}`);
-                popupThx.classList.add('active');
-                popupThxText.textContent = `Ваша заявка № ${data.id}`;
+        headerNavListItems.forEach(function (item) {
+            item.addEventListener('click', () => {
+                // // headerContainer.classList.remove('header__container-mobile');
+                // navbar.classList.remove('header__container-mobile');
+                // headerSubmit.style.display = 'block';
+                // headerSlogan.style.display = 'block';
+                // headerNav.style.display = 'none';
         
-                scrollController.disabledScroll();
-            });
+                // navIconBtn.style.display = 'flex';
+                // // headerLanguage.style.display = 'none';
+                // headerNavClose.style.display = 'none';
+        
+                // headerNavList.classList.remove('black-bg');
+                // headerLogo.forEach(function(logo) {
+                //     logo.style.fill = '#151515';
+                // });
 
-        setTimeout(function () {
-            popupThx.classList.remove('active');
-            scrollController.enabledScroll();
-        }, 5000);
+                // // if (item.classList.contains('nav__link4') || item.classList.contains('nav__link5')) {
+                // //     productsText.style.top = '0vh';
+
+                // for (let i = 0; i < productsTextBlock.length; i++){
+                //     productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
+
+                //     productsImg[i].classList.remove(`img-right${i}`);
+
+                //     productsBtn[i].classList.remove(`btn-block_right${i}`);
+
+                //     productsBgRigh[i].classList.remove(`bg-right${i}`);
+
+                // }
+                // // }
+
+                // // start scroll
+                // // document.body.classList.remove('no-scroll');
+                // scrollController.enabledScroll();
+                navClose();
+            });
+        });
+
+        headerSubmit.addEventListener('click', () => {
+            // // headerContainer.classList.remove('header__container-mobile');
+            // navbar.classList.remove('header__container-mobile');
+            // headerSubmit.style.display = 'block';
+            // headerSlogan.style.display = 'block';
+            // headerNav.style.display = 'none';
+    
+            // navIconBtn.style.display = 'flex';
+            // // headerLanguage.style.display = 'none';
+            // headerNavClose.style.display = 'none';
+    
+            // headerNavList.classList.remove('black-bg');
+            // headerLogo.forEach(function(logo) {
+            //     logo.style.fill = '#151515';
+            // });
+    
+    
+            // for (let i = 0; i < productsTextBlock.length; i++){
+            //     productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
+    
+            //     productsImg[i].classList.remove(`img-right${i}`);
+    
+            //     productsBtn[i].classList.remove(`btn-block_right${i}`);
+    
+            //     productsBgRigh[i].classList.remove(`bg-right${i}`);
+    
+            // }
+            // // start scroll
+            // // document.body.classList.toggle('no-scroll');
+            // scrollController.enabledScroll();
+            navClose();
+        });
+    
     });
+
+    headerNavClose.addEventListener('click', () => {
+        // // headerContainer.classList.remove('header__container-mobile');
+        // navbar.classList.remove('header__container-mobile');
+        // headerSubmit.style.display = 'block';
+        // headerSlogan.style.display = 'block';
+        // headerNav.style.display = 'none';
+
+        // navIconBtn.style.display = 'flex';
+        // // headerLanguage.style.display = 'none';
+        // headerNavClose.style.display = 'none';
+
+        // headerNavList.classList.remove('black-bg');
+        // headerLogo.forEach(function(logo) {
+        //     logo.style.fill = '#151515';
+        // });
+
+
+        // for (let i = 0; i < productsTextBlock.length; i++){
+        //     productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
+
+        //     productsImg[i].classList.remove(`img-right${i}`);
+
+        //     productsBtn[i].classList.remove(`btn-block_right${i}`);
+
+        //     productsBgRigh[i].classList.remove(`bg-right${i}`);
+
+        // }
+        // // start scroll
+        // // document.body.classList.toggle('no-scroll');
+        // scrollController.enabledScroll();
+        navClose();
+    });
+    
+    
+
+
+    // // section contacts 
+    // // inputmask and validate
+    // const phone = document.getElementById('phone');
+    // const imPhone = new Inputmask('+3(999)999-99-99');
+
+    // imPhone.mask(phone);
+
+    // const validator = new JustValidate('.contacts__form', {
+    //     errorLabelCssClass: 'contacts__input-error',
+    //     errorLabelStyle: {
+    //         // color: '#E53939',
+    //         color: '#f5f5f5',
+    //     },
+    // });
+
+    // validator.addField('#name', [
+    //     {
+    //         rule: 'required',
+    //         errorMessage: 'Вкажіть ваше ім`я',
+    //     },
+    //     {
+    //         rule: 'minLength',
+    //         value: 2,
+    //         errorMessage: 'Не менше 2х символів',
+    //     },
+    //     {
+    //         rule: 'maxLength',
+    //         value: 30,
+    //         errorMessage: 'Не більше 30 символів',
+    //     }
+    // ]);
+    
+    // validator.addField('#phone', [
+    //     {
+    //         rule: 'required',
+    //         errorMessage: 'Вкажіть номер телефону',
+    //     },
+    //     {
+    //         validator: value => {
+    //             const number = phone.inputmask.unmaskedvalue();
+    //             return number.length === 10;
+    //         },
+    //         errorMessage: 'Неправильний номер телефону',
+    //     }
+    // ]);
+
+    // validator.onSuccess((event) => {
+    //     const form = event.currentTarget;
+
+    //     const popupThx = document.querySelector('.popup__thx');
+    //     const popupThxText = document.querySelector('.popup__thx-text');
+    
+    //     fetch('https://jsonplaceholder.typicode.com/posts', {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             title: form.title.value,
+    //             name: form.name.value,
+    //             phone: form.phone.value,
+    //             company: form.company.value,
+    //             email: form.email.value,
+    //             textarea: form.textarea.value
+    //         }),
+    //         headers: {
+    //             'Content-type': 'application/json; charset=UTF-8',
+    //         },
+    //     })
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             form.reset();
+    //             // alert(`Спасибо, мы перезвоним вам в течении 10 минут. Ваша заявка № ${data.id}`);
+    //             popupThx.classList.add('active');
+    //             popupThxText.textContent = `Ваша заявка № ${data.id}`;
+        
+    //             scrollController.disabledScroll();
+    //         });
+
+    //     setTimeout(function () {
+    //         popupThx.classList.remove('active');
+    //         scrollController.enabledScroll();
+    //     }, 5000);
+    // });
+
 
 
     // ripple

@@ -1,6 +1,7 @@
 .guys {
     /* padding-top: 130px; */
-    padding-top: 70px;
+    /* padding-top: 70px; */
+    padding-top: 20px;
     /* position: relative; */
 
     width: 100%;
@@ -18,7 +19,7 @@
 }
 
 .guys__container {
-
+    position: relative;
 }
 
 .guys__content {
@@ -58,8 +59,8 @@
 
     gap: 30px;
     z-index: 1;
-    height: 204px;
-    width: 390px;
+    /* height: 204px; */
+    /* width: 390px; */
     /* height: 100%;
     width: 100%; */
 
@@ -116,12 +117,12 @@
 }
 
 .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
-    margin-left: -20px;
+    margin-left: -26px;
     margin-right: -5px;
 }
 
 .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
-    margin-left: -10px;
+    margin-left: -13px;
     margin-right: -15px;
 
 }
@@ -142,7 +143,8 @@
     overflow: hidden;
     cursor: pointer;
 
-    margin-top: 60px;
+    margin-top: 20px;
+    /* margin-top: 60px; */
     /* z-index: 12; */
 }
 
@@ -165,6 +167,8 @@
     top: 50%;
     transform:translate(-50%,-50%);
     z-index: -1;
+
+    /* margin-top: -40px; */
 
     /* opacity: 1; */
     /* transition: all 0.8s; */
@@ -212,6 +216,46 @@
 }
 
 
+.guys__content-tagline {
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 14;
+    text-align: center;
+    opacity: 1;
+}
+
+.guys__content-tagline_text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--accent);
+}
+
+.guys__content-tagline_arrow {
+    padding-top: 4px;
+    transform: translate(0, 15%);
+    transition: transform 0.2s ease-in-out;
+
+    animation: moving 1s infinite;
+    animation-direction: alternate-reverse;
+    /* animation-direction: alternate, reverse; */
+    /* &:hover {
+        transform: translate(0, 10%);
+    } */
+}
+
+@keyframes moving {
+    to {
+        transform: translate(0, 0%);
+    }
+}
+
+
+/* * не используется */
 .guys__arrow {
     position: absolute;
     right: 4px;
@@ -220,6 +264,7 @@
     z-index: 3;
     cursor: pointer;
 }
+
 .guys__slider-btn {
     display: block;
     width: 15px;
@@ -274,3 +319,310 @@
     -webkit-transform: rotate(0deg);
 } */
 
+
+
+@media (max-width: 1330px) {
+    .guys {
+        top: 20vh;
+    }
+
+    .guys__content {
+        gap: 20px;
+    }
+
+    .guys__letter-wrapper {
+        gap: 15px;
+    }
+
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 90%;
+        height: 100%;
+    }
+    
+    .guys__letter-wrapper-item-3,
+    .guys__letter-wrapper-item-4 {
+        text-align: right;
+    }
+
+    .guys__video-block {
+        height: 200px;
+        width: 380px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 1190px) {
+    .guys__content {
+        gap: 5px;
+    }
+
+    .guys__letter-wrapper {
+        gap:5px;
+    }
+    
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 85%;
+        height: 100%;
+    }
+    
+    .guys__video-block {
+        height: 190px;
+        width: 340px;
+        /* padding-top: 60px; */
+    }
+
+    /* .guys__letter-change {
+        width: 160px;
+        height: 200px;
+    } */
+}
+
+@media (max-width: 1120px) {
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 80%;
+        height: 100%;
+    }
+    
+    .guys__video-block {
+        height: 175px;
+        width: 300px;
+        /* padding-top: 60px; */
+    }
+}
+
+@media (max-width: 1080px) {
+    .guys {
+        top: 15vh;
+    }
+
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 80%;
+        height: 100%;
+    }
+
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -26px;
+        margin-right: -5px;
+    }
+    
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -13px;
+        margin-right: -15px;
+    }
+    
+    .guys__video-block {
+        height: 170px;
+        width: 260px;
+    }
+
+    .guys__letter-wrapper-top {
+        margin-right: -20px;
+        /* padding-right: 20px; */
+    }
+
+    .guys__letter-wrapper-bottom {
+        margin-left: -20px;
+        /* padding-left: 20px; */
+    }
+
+    .guys__letter-wrapper-item-2 {
+        margin-left: -20px;
+    }
+
+    .guys__letter-wrapper-item-3 {
+        margin-right: -20px;
+    }
+
+    /* .header__nav-slogan {
+        display: none;
+        opacity: 0;
+    } */
+}
+
+
+@media (max-width: 960px) {
+    .guys__letter-wrapper-top {
+        margin-right: -30px;
+        /* padding-right: 20px; */
+    }
+
+    .guys__letter-wrapper-bottom {
+        margin-left: -30px;
+        /* padding-left: 20px; */
+    }
+
+    .guys__letter-wrapper-item-2 {
+        margin-left: -20px;
+    }
+
+    .guys__letter-wrapper-item-3 {
+        margin-right: -20px;
+    }
+
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 70%;
+        height: 100%;
+    }
+    
+    .guys__video-block {
+        height: 155px;
+        width: 220px;
+    }
+
+}
+
+@media (max-width: 891px) {
+    .guys {
+        top: 60px;
+    }
+
+    .guys__video-block {
+        position: absolute;
+        /* top: 88vh; */
+        z-index: 15;
+        margin-left: -15px;
+        margin-right: -15px;
+        border-radius: 5px;
+    }
+
+    .guys__content-border {
+        /* opacity: 0; */
+        /* height: 200px; */
+
+    }
+
+    .guys__letter-wrapper-top {
+        margin-right: -10px;
+        /* padding-right: 20px; */
+    }
+
+    .guys__letter-wrapper-bottom {
+        margin-left: -10px;
+        /* padding-left: 20px; */
+    }
+
+    .guys__letter-wrapper-item-2 {
+        margin-left: -5px;
+    }
+
+    .guys__letter-wrapper-item-3 {
+        margin-right: -5px;
+    }
+
+    .guys__letter-wrapper .guys__letter,
+    .guys__letter-wrapper .guys__letter-hov {
+        width: 90%;
+        height: 100%;
+    }
+
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -20px;
+        margin-right: -5px;
+    }
+    
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -23px;
+        margin-right: -5px;
+    
+    }
+
+    .guys__letter-wrapper {
+        gap: 40px;
+    }
+
+    .guys__content {
+        gap: 50px;
+    }
+
+    .guys__content-tagline {
+        bottom: -180px;
+    }
+}
+
+@media (max-width: 880px) {
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -20px;
+        margin-right: -5px;
+    }
+    
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -23px;
+        margin-right: -5px;
+    
+    }
+
+}
+
+@media (max-width: 860px) {
+    .guys__letter-wrapper-item-2:hover .guys__letter-change:nth-of-type(2) {
+        /* margin-left: -5px; */
+        margin-right: 0;
+    }
+
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -23px;
+        margin-right: -8px;
+    }
+
+}
+
+@media (max-width: 830px) {
+    .guys__letter-wrapper-item-2:hover .guys__letter-change:nth-of-type(2) {
+        /* margin-left: -5px; */
+        margin-right: 1px;
+    }
+}
+
+@media (max-width: 781px) {
+    .guys {
+        top: 100px;
+    }
+
+    .guys__letter-wrapper-bottom {
+        height: 210px;
+    }
+}
+
+@media (max-width: 720px) {
+    .guys {
+        top: 120px;
+    }
+
+    .guys__content {
+        gap: 25px;
+    }
+
+    .guys__letter-wrapper {
+        gap: 12px;
+    }
+
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
+        margin-left: -18px;
+        margin-right: -10px;
+    
+    }
+
+}
+
+@media (max-width: 460px) {
+    .guys__letter-wrapper-bottom {
+        height: 220px;
+    }
+
+    .guys__content {
+        gap: 25px;
+    }
+
+    .guys__letter-wrapper {
+        gap: 12px;
+    }
+
+    .guys__content-tagline {
+        bottom: -280px;
+    }
+}

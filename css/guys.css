@@ -476,14 +476,14 @@
 
 }
 
-@media (max-width: 891px) {
+@media (max-width: 890px) {
     .guys {
         top: 60px;
     }
 
     .guys__video-block {
         position: absolute;
-        /* top: 88vh; */
+        top: 88vh;
         z-index: 15;
         margin-left: -15px;
         margin-right: -15px;

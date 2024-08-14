@@ -283,7 +283,8 @@
     /* align-items: center; */
     /* min-height: 50px; */
     min-height: 80px;
-    max-width: 588px;
+    max-width: 100%;
+    /* max-width: 588px; */
     
     position: relative;
 

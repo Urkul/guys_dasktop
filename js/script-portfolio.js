@@ -325,10 +325,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (coordPortfolioDescriptionBtn > windowWidth) {
 
                 portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax', '70%');
+                // portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax-opacity', '1');
             }
             else {
                 
                 portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax', '0%');
+                // portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax-opacity', '0');
             }
         }
     }
@@ -346,14 +348,18 @@ document.addEventListener('DOMContentLoaded', function () {
             //     portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax', '70%');
             // }
 
-            if (coordPortfolioDescriptionBtn < 0) {
+            if (coordPortfolioDescriptionBtn < 0 || coordPortfolioDescriptionBtn > windowWidth / 2 ) {
 
                 portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax', '0%');
+                // portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax-opacity', '1');
+
             }
                 
             else {
 
                 portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax', '70%');
+                // portfolioDescriptionBtns[i].setAttribute('data-swiper-parallax-opacity', '0');
+
             }
         }
     }
@@ -524,35 +530,35 @@ document.addEventListener('DOMContentLoaded', function () {
             },
     
             breakpoints: {
-                // 1025: {
-                //     slidesPerView: 1.815,
-                //     spaceBetween: 24,
-                // },
-                // 920: {
-                //     slidesPerView: 1.5,
-                //     spaceBetween: 18,
-                // },
-                // 820: {
-                //     slidesPerView: 1.4,
-                //     spaceBetween: 16,
-                // },
-                // 640: {
-                //     slidesPerView: 1.3,
-                //     spaceBetween: 14,
-                // },
-                // 320: {
-                //     slidesPerView: 1,
-                //     spaceBetween: 10,
-                // }
-
-                960: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                1025: {
+                    slidesPerView: 1.815,
+                    spaceBetween: 24,
+                },
+                920: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 18,
+                },
+                820: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 16,
+                },
+                640: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 14,
                 },
                 320: {
                     slidesPerView: 1,
                     spaceBetween: 10,
                 }
+
+                // 960: {
+                //     slidesPerView: 2,
+                //     spaceBetween: 20,
+                // },
+                // 320: {
+                //     slidesPerView: 1,
+                //     spaceBetween: 10,
+                // }
             },
     
             simulateTouch: true,
@@ -577,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // autoplay: {
             //     delay: 3500,
             // },
-            // speed: 1000,
+            speed: 1000,
     
             // freeMode: true,
     

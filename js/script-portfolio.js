@@ -524,21 +524,30 @@ document.addEventListener('DOMContentLoaded', function () {
             },
     
             breakpoints: {
-                1025: {
-                    slidesPerView: 1.815,
-                    spaceBetween: 24,
-                },
-                920: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 18,
-                },
-                820: {
-                    slidesPerView: 1.4,
-                    spaceBetween: 16,
-                },
-                640: {
-                    slidesPerView: 1.3,
-                    spaceBetween: 14,
+                // 1025: {
+                //     slidesPerView: 1.815,
+                //     spaceBetween: 24,
+                // },
+                // 920: {
+                //     slidesPerView: 1.5,
+                //     spaceBetween: 18,
+                // },
+                // 820: {
+                //     slidesPerView: 1.4,
+                //     spaceBetween: 16,
+                // },
+                // 640: {
+                //     slidesPerView: 1.3,
+                //     spaceBetween: 14,
+                // },
+                // 320: {
+                //     slidesPerView: 1,
+                //     spaceBetween: 10,
+                // }
+
+                960: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
                 },
                 320: {
                     slidesPerView: 1,
@@ -565,10 +574,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
             parallax: true,
     
-            autoplay: {
-                delay: 3500,
-            },
-            speed: 1000,
+            // autoplay: {
+            //     delay: 3500,
+            // },
+            // speed: 1000,
     
             // freeMode: true,
     
@@ -577,17 +586,17 @@ document.addEventListener('DOMContentLoaded', function () {
         
             // stop slider portfolio
     
-            on: {
-                init() {
-                    this.el.addEventListener('mouseenter', () => {
-                        this.autoplay.stop();
-                    });
+            // on: {
+            //     init() {
+            //         this.el.addEventListener('mouseenter', () => {
+            //             this.autoplay.stop();
+            //         });
     
-                    this.el.addEventListener('mouseleave', () => {
-                        this.autoplay.start();
-                    });
-                }
-            },
+            //         this.el.addEventListener('mouseleave', () => {
+            //             this.autoplay.start();
+            //         });
+            //     }
+            // },
     
         });
 

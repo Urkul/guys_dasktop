@@ -1,359 +1,359 @@
 
-$(function () {
+// $(function () {
     
-    'use strict';
+//     'use strict';
 
 
-    // lenis Smooth scroll
-    const lenis = new Lenis({
-        duration: 1.6
-    })
+//     // lenis Smooth scroll
+//     const lenis = new Lenis({
+//         duration: 1.6
+//     })
 
-    lenis.on('scroll', (e) => {
-        // console.log(e)
-    })
-    function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
+//     lenis.on('scroll', (e) => {
+//         // console.log(e)
+//     })
+//     function raf(time) {
+//         lenis.raf(time)
+//         requestAnimationFrame(raf)
+//     }
+//     requestAnimationFrame(raf)
 
-    // integration Lenis on GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update)
+//     // integration Lenis on GSAP ScrollTrigger
+//     lenis.on('scroll', ScrollTrigger.update)
 
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000)
-    });
+//     gsap.ticker.add((time) => {
+//         lenis.raf(time * 1000)
+//     });
     
 
 
-    // create animation ScrollTrigger
-    function scrollTrig() {
+//     // create animation ScrollTrigger
+//     function scrollTrig() {
 
-        gsap.registerPlugin(ScrollTrigger);
+//         gsap.registerPlugin(ScrollTrigger);
 
-        let gsapBl = $('.products__text-block').height();
-        // console.log('gsapBl: ', gsapBl);
+//         let gsapBl = $('.products__text-block').height();
+//         // console.log('gsapBl: ', gsapBl);
 
-        // transform slider track
-        let gsapTrack = $('.products__text-animation').height();
-        // console.log('gsapTrack: ', gsapTrack);
+//         // transform slider track
+//         let gsapTrack = $('.products__text-animation').height();
+//         // console.log('gsapTrack: ', gsapTrack);
         
-        let scrollSliderTransform = gsapTrack - gsapBl;
-        // console.log('scrollSliderTransform: ', scrollSliderTransform);
+//         let scrollSliderTransform = gsapTrack - gsapBl;
+//         // console.log('scrollSliderTransform: ', scrollSliderTransform);
 
-        // create ScrollTrigger
-        gsap.to('.products__text-animation', {
-            scrollTrigger: {
-                trigger: '.products',
-                start: 'top top',
-                end: () => '+=' + gsapTrack,
-                pin: true,
-                scrub: true,
-                // markers: true,
-            },
-            y: '-=' + scrollSliderTransform + 'px',
-            // y: '-1200',
-        });
+//         // create ScrollTrigger
+//         gsap.to('.products__text-animation', {
+//             scrollTrigger: {
+//                 trigger: '.products',
+//                 start: 'top top',
+//                 end: () => '+=' + gsapTrack,
+//                 pin: true,
+//                 scrub: true,
+//                 // markers: true,
+//             },
+//             y: '-=' + scrollSliderTransform + 'px',
+//             // y: '-1200',
+//         });
         
-    }
+//     }
 
-    scrollTrig();
+//     scrollTrig();
 
 
 
-    // animation block products
+//     // animation block products
     
-    // const products = document.querySelector('.products');
-    // const productsTextBlock = document.querySelectorAll('.products__text-block');
-    // // const productsTextFirstBlock = document.querySelectorAll('.products__text-first_block');
-    // const productsTextSecondBlock = document.querySelectorAll('.products__text-second_block');
+//     // const products = document.querySelector('.products');
+//     // const productsTextBlock = document.querySelectorAll('.products__text-block');
+//     // // const productsTextFirstBlock = document.querySelectorAll('.products__text-first_block');
+//     // const productsTextSecondBlock = document.querySelectorAll('.products__text-second_block');
 
-    // const productsBgRigh = document.querySelectorAll('.products__description-bg-right');
-    // const productsImg = document.querySelectorAll('.products__img');
-    // const productsBtn = document.querySelectorAll('.products__animation-btn-block');
+//     // const productsBgRigh = document.querySelectorAll('.products__description-bg-right');
+//     // const productsImg = document.querySelectorAll('.products__img');
+//     // const productsBtn = document.querySelectorAll('.products__animation-btn-block');
 
-    // // const productsDescriptionBtn = document.querySelectorAll('.products__animation-description-wrapper');
-    // // const productsBtnWrp = document.querySelectorAll('.products__btn-wrapper');
+//     // // const productsDescriptionBtn = document.querySelectorAll('.products__animation-description-wrapper');
+//     // // const productsBtnWrp = document.querySelectorAll('.products__btn-wrapper');
     
-    // const coordProducts = products.getBoundingClientRect();
+//     // const coordProducts = products.getBoundingClientRect();
 
-    // let index;
+//     // let index;
 
 
-    // // function animateImgOpen(productsImg) {
-    // //     transition.begin(productsImg, [
-    // //         "transform translate(-50vw,0) translate(-107vw,0) 0.3s ease-out 0.6s",
-    // //         "opacity 0 1 0.3s"
-    // //     ]);
-    // // }
+//     // // function animateImgOpen(productsImg) {
+//     // //     transition.begin(productsImg, [
+//     // //         "transform translate(-50vw,0) translate(-107vw,0) 0.3s ease-out 0.6s",
+//     // //         "opacity 0 1 0.3s"
+//     // //     ]);
+//     // // }
     
-    // // function animateBgOpen(productsBgRigh) {
-    // //     transition.begin(productsBgRigh, [
-    // //         "transform translate(0,0) translate(-100vw,0) 0.5s ease-out 0.6s",
-    // //         "opacity 0 1 0.5s linear 0.5s"
-    // //     ]);
-    // // }
+//     // // function animateBgOpen(productsBgRigh) {
+//     // //     transition.begin(productsBgRigh, [
+//     // //         "transform translate(0,0) translate(-100vw,0) 0.5s ease-out 0.6s",
+//     // //         "opacity 0 1 0.5s linear 0.5s"
+//     // //     ]);
+//     // // }
     
-    // // function animateBtnOpen(productsBtn) {
-    // //     transition.begin(productsBtn, [
-    // //         "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
-    // //         // "opacity 0 1 0.5s linear 0.5s"
-    // //     ]);
-    // // }
+//     // // function animateBtnOpen(productsBtn) {
+//     // //     transition.begin(productsBtn, [
+//     // //         "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
+//     // //         // "opacity 0 1 0.5s linear 0.5s"
+//     // //     ]);
+//     // // }
 
-    // // function animateBtnDescOpen(productsDescriptionBtn) {
-    // //     transition.begin(productsDescriptionBtn, [
-    // //         // "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
-    // //         "opacity 0 1 0.6s linear 0.6s"
-    // //     ]);
-    // // }
+//     // // function animateBtnDescOpen(productsDescriptionBtn) {
+//     // //     transition.begin(productsDescriptionBtn, [
+//     // //         // "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
+//     // //         "opacity 0 1 0.6s linear 0.6s"
+//     // //     ]);
+//     // // }
 
-    // // function animateBtnWrapOpen(productsBtnWrp) {
-    // //     transition.begin(productsBtnWrp, [
-    // //         // "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
-    // //         "opacity 0 1 0.8s linear 0.8s"
-    // //     ]);
-    // // }
+//     // // function animateBtnWrapOpen(productsBtnWrp) {
+//     // //     transition.begin(productsBtnWrp, [
+//     // //         // "transform translate(0,0) translate(-58vw,0) 0.1s ease 0.1s",
+//     // //         "opacity 0 1 0.8s linear 0.8s"
+//     // //     ]);
+//     // // }
 
 
-    // // function animateImgClose(productsImg) {
-    // //     transition.begin(productsImg, [
-    // //         "transform translate(-107vw,0) translate(-50vw,0) 0.0s ease 0.0s",
-    // //         "opacity 0 1 0s linear 0s"
-    // //     ]);
-    // // }
+//     // // function animateImgClose(productsImg) {
+//     // //     transition.begin(productsImg, [
+//     // //         "transform translate(-107vw,0) translate(-50vw,0) 0.0s ease 0.0s",
+//     // //         "opacity 0 1 0s linear 0s"
+//     // //     ]);
+//     // // }
     
-    // // function animateBgClose(productsBgRigh) {
-    // //     transition.begin(productsBgRigh, [
-    // //         "transform translate(-100vw,0) translate(0,0) 0.0s ease 0.0s",
-    // //         "opacity 0 1 0.0s linear 0.0s"
-    // //     ]);
-    // // }
+//     // // function animateBgClose(productsBgRigh) {
+//     // //     transition.begin(productsBgRigh, [
+//     // //         "transform translate(-100vw,0) translate(0,0) 0.0s ease 0.0s",
+//     // //         "opacity 0 1 0.0s linear 0.0s"
+//     // //     ]);
+//     // // }
     
-    // // function animateBtnClose(productsBtn) {
-    // //     transition.begin(productsBtn, [
-    // //         "transform translate(-58vw,0) translate(0,0) 0.0s ease 0.0s",
-    // //         "opacity 0 1 0s linear 0s"
-    // //     ]);
-    // // }
+//     // // function animateBtnClose(productsBtn) {
+//     // //     transition.begin(productsBtn, [
+//     // //         "transform translate(-58vw,0) translate(0,0) 0.0s ease 0.0s",
+//     // //         "opacity 0 1 0s linear 0s"
+//     // //     ]);
+//     // // }
 
 
-    // document.addEventListener('scroll', function () {
+//     // document.addEventListener('scroll', function () {
 
-    //     // const slogan = document.querySelector('.slogan');
-    //     // let coordSlogan = slogan.getBoundingClientRect();
+//     //     // const slogan = document.querySelector('.slogan');
+//     //     // let coordSlogan = slogan.getBoundingClientRect();
 
-    //     // console.log('coordSlogan.top: ', coordSlogan.top);
-
-
-    //     // if (coordSlogan.top < windowHeight / 2 && coordSlogan.top > windowHeight / 3) {
-    //     //     location.reload();
-    //     //     // products.style.top = -'50vh';
-    //     // }
+//     //     // console.log('coordSlogan.top: ', coordSlogan.top);
 
 
-    //     for (let i = 0; i < productsTextBlock.length; i++) {
-
-    //         let coordproductsTextBlock = productsTextBlock[i].getBoundingClientRect();
-
-    //         // let coordProductsTextFirstBlock = productsTextFirstBlock[i].getBoundingClientRect();
-
-    //         if (coordproductsTextBlock.top >= coordProducts.height - 300 && coordproductsTextBlock.top <= coordProducts.height - 50) {
-    //             productsTextBlock[i].classList.add('products-reveal-active');
-    //         } else {
-    //             productsTextBlock[i].classList.remove('products-reveal-active');
-    //         }
+//     //     // if (coordSlogan.top < windowHeight / 2 && coordSlogan.top > windowHeight / 3) {
+//     //     //     location.reload();
+//     //     //     // products.style.top = -'50vh';
+//     //     // }
 
 
-    //         // if (coordproductsTextBlock.top >= (coordProducts.height / 2.8) && coordproductsTextBlock.top <= coordProducts.height / 2) {
+//     //     for (let i = 0; i < productsTextBlock.length; i++) {
 
-    //         if (coordproductsTextBlock.top >= (window.innerHeight / 3.2) && coordproductsTextBlock.top <= (window.innerHeight / 2)) {
+//     //         let coordproductsTextBlock = productsTextBlock[i].getBoundingClientRect();
 
-    //             // productsTextSecondBlock[i].style.marginTop = '-20px';
-    //             // productsTextSecondBlock[i].style.opacity = 1;
+//     //         // let coordProductsTextFirstBlock = productsTextFirstBlock[i].getBoundingClientRect();
 
-    //             productsTextSecondBlock[i].classList.add('products__text-second_block-open');
+//     //         if (coordproductsTextBlock.top >= coordProducts.height - 300 && coordproductsTextBlock.top <= coordProducts.height - 50) {
+//     //             productsTextBlock[i].classList.add('products-reveal-active');
+//     //         } else {
+//     //             productsTextBlock[i].classList.remove('products-reveal-active');
+//     //         }
 
-    //             // animateImgOpen(productsImg[i]);
-    //             productsImg[i].classList.add(`img-right${i}`);
-    //             // animateBtnOpen(productsBtn[i]);
-    //             productsBtn[i].classList.add(`btn-block_right${i}`);
-    //             // animateBgOpen(productsBgRigh[i]);
-    //             productsBgRigh[i].classList.add(`bg-right${i}`);
-    //             index = i;
-    //             // console.log('index: ', index);
 
-    //             // animateBtnDescOpen(productsDescriptionBtn[i]);
-    //             // productsDescriptionBtn[i].classList.add(`btn-descr_right${i}`);
-    //             // animateBtnWrapOpen(productsBtnWrp[i])
+//     //         // if (coordproductsTextBlock.top >= (coordProducts.height / 2.8) && coordproductsTextBlock.top <= coordProducts.height / 2) {
 
-    //             // productsTextBlock[i].style.paddingBottom = '10px';
+//     //         if (coordproductsTextBlock.top >= (window.innerHeight / 3.2) && coordproductsTextBlock.top <= (window.innerHeight / 2)) {
 
-    //             // if (productsTextSecondBlock[i].classList.contains('products__text-second_block-open')) {
-    //             //     animateImgOpen(productsImg[i]);
-    //             //     animateBtnOpen(productsBtn[i]);
-    //             //     animateBgOpen(productsBgRigh[i]);
-    //             //     bgRight = productsBgRigh[i];
+//     //             // productsTextSecondBlock[i].style.marginTop = '-20px';
+//     //             // productsTextSecondBlock[i].style.opacity = 1;
 
-    //             //     animateBtnDescOpen(productsDescriptionBtn[i]);
-    //             //     animateBtnWrapOpen(productsBtnWrp[i])
-    //             // }
-    //             // else {
-    //             //     animateImgClose(productsImg[i]);
-    //             //     animateBtnClose(productsBtn[i]);
-    //             //     animateBgClose(productsBgRigh[i]);
-    //             // }
+//     //             productsTextSecondBlock[i].classList.add('products__text-second_block-open');
 
-    //         } else if ((coordproductsTextBlock.top < (window.innerHeight / 3.2) && coordproductsTextBlock.top >= 0) || (coordproductsTextBlock.top > (window.innerHeight / 2) && coordproductsTextBlock.top < (window.innerHeight))) {
+//     //             // animateImgOpen(productsImg[i]);
+//     //             productsImg[i].classList.add(`img-right${i}`);
+//     //             // animateBtnOpen(productsBtn[i]);
+//     //             productsBtn[i].classList.add(`btn-block_right${i}`);
+//     //             // animateBgOpen(productsBgRigh[i]);
+//     //             productsBgRigh[i].classList.add(`bg-right${i}`);
+//     //             index = i;
+//     //             // console.log('index: ', index);
 
-    //             // productsTextSecondBlock[i].style.marginTop = '-100px';
-    //             // productsTextSecondBlock[i].style.opacity = 0;
-    //             productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
-    //             // productsTextBlock[i].style.paddingBottom = '30px';
+//     //             // animateBtnDescOpen(productsDescriptionBtn[i]);
+//     //             // productsDescriptionBtn[i].classList.add(`btn-descr_right${i}`);
+//     //             // animateBtnWrapOpen(productsBtnWrp[i])
 
-    //             // animateImgClose(productsImg[i]);
-    //             productsImg[i].classList.remove(`img-right${i}`);
-    //             // animateBtnClose(productsBtn[i]);
-    //             productsBtn[i].classList.remove(`btn-block_right${i}`);
+//     //             // productsTextBlock[i].style.paddingBottom = '10px';
+
+//     //             // if (productsTextSecondBlock[i].classList.contains('products__text-second_block-open')) {
+//     //             //     animateImgOpen(productsImg[i]);
+//     //             //     animateBtnOpen(productsBtn[i]);
+//     //             //     animateBgOpen(productsBgRigh[i]);
+//     //             //     bgRight = productsBgRigh[i];
+
+//     //             //     animateBtnDescOpen(productsDescriptionBtn[i]);
+//     //             //     animateBtnWrapOpen(productsBtnWrp[i])
+//     //             // }
+//     //             // else {
+//     //             //     animateImgClose(productsImg[i]);
+//     //             //     animateBtnClose(productsBtn[i]);
+//     //             //     animateBgClose(productsBgRigh[i]);
+//     //             // }
+
+//     //         } else if ((coordproductsTextBlock.top < (window.innerHeight / 3.2) && coordproductsTextBlock.top >= 0) || (coordproductsTextBlock.top > (window.innerHeight / 2) && coordproductsTextBlock.top < (window.innerHeight))) {
+
+//     //             // productsTextSecondBlock[i].style.marginTop = '-100px';
+//     //             // productsTextSecondBlock[i].style.opacity = 0;
+//     //             productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
+//     //             // productsTextBlock[i].style.paddingBottom = '30px';
+
+//     //             // animateImgClose(productsImg[i]);
+//     //             productsImg[i].classList.remove(`img-right${i}`);
+//     //             // animateBtnClose(productsBtn[i]);
+//     //             productsBtn[i].classList.remove(`btn-block_right${i}`);
                 
 
-    //             if (i != index) {
-    //                 // animateBgClose(productsBgRigh[i]);  
-    //                 productsBgRigh[i].classList.remove(`bg-right${i}`);
-    //             } 
+//     //             if (i != index) {
+//     //                 // animateBgClose(productsBgRigh[i]);  
+//     //                 productsBgRigh[i].classList.remove(`bg-right${i}`);
+//     //             } 
 
-    //             // console.log(i + ' ' + coordproductsTextBlock.top);
-    //         }
-    //         else if (coordproductsTextBlock.top < 0 || coordproductsTextBlock.top > window.innerHeight) {
+//     //             // console.log(i + ' ' + coordproductsTextBlock.top);
+//     //         }
+//     //         else if (coordproductsTextBlock.top < 0 || coordproductsTextBlock.top > window.innerHeight) {
 
-    //             productsBgRigh[i].classList.remove(`bg-right${i}`);
+//     //             productsBgRigh[i].classList.remove(`bg-right${i}`);
 
-    //             productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
-    //             productsImg[i].classList.remove(`img-right${i}`);
-    //             productsBtn[i].classList.remove(`btn-block_right${i}`);
-    //         }
+//     //             productsTextSecondBlock[i].classList.remove('products__text-second_block-open');
+//     //             productsImg[i].classList.remove(`img-right${i}`);
+//     //             productsBtn[i].classList.remove(`btn-block_right${i}`);
+//     //         }
 
-    //         // productsBgRigh[index].classList.add(`bg-right${index}`)
-    //     }
-    // });
-
-
-
-
-    // setTimeout(() => {
-    // productsBgRigh[index].classList.add(`bg-right${index}`);
-
-    // }, 3000);
+//     //         // productsBgRigh[index].classList.add(`bg-right${index}`)
+//     //     }
+//     // });
 
 
 
-    // function animatTextOpen() {
+
+//     // setTimeout(() => {
+//     // productsBgRigh[index].classList.add(`bg-right${index}`);
+
+//     // }, 3000);
+
+
+
+//     // function animatTextOpen() {
         
-    //     gsap.registerPlugin(ScrollTrigger);
+//     //     gsap.registerPlugin(ScrollTrigger);
 
-    //     // let gsapTrack = $('.products__text-animation').height();
+//     //     // let gsapTrack = $('.products__text-animation').height();
 
-    //     gsap.to('.text-second_block', {
-	// 		scrollTrigger: {
-    //             trigger: '.products__text-animation',
-	// 			start: '-10% center',
-	// 			// end: () => '+=' + gsapTrack,
-	// 			// pin: true,
-    //             // scrub: true,
-    //             markers: true,
-	// 		},
-	// 		// y: '-=' + scrollSliderTransform + 'px',
-    //         // marginTop: '-20px',
-    //         yPercent: 100,
-    //         opacity: 1,
-    //         duration: 0.6,
-	// 	});
+//     //     gsap.to('.text-second_block', {
+// 	// 		scrollTrigger: {
+//     //             trigger: '.products__text-animation',
+// 	// 			start: '-10% center',
+// 	// 			// end: () => '+=' + gsapTrack,
+// 	// 			// pin: true,
+//     //             // scrub: true,
+//     //             markers: true,
+// 	// 		},
+// 	// 		// y: '-=' + scrollSliderTransform + 'px',
+//     //         // marginTop: '-20px',
+//     //         yPercent: 100,
+//     //         opacity: 1,
+//     //         duration: 0.6,
+// 	// 	});
 
-    // }
+//     // }
 
-    // animatTextOpen();
+//     // animatTextOpen();
 
 
-    // function animatTextOpen2() {
+//     // function animatTextOpen2() {
         
-    //     gsap.registerPlugin(ScrollTrigger);
+//     //     gsap.registerPlugin(ScrollTrigger);
 
-    //     // let gsapTrack = $('.products__text-animation').height();
+//     //     // let gsapTrack = $('.products__text-animation').height();
 
-    //     gsap.to('.text-second_block_2', {
-	// 		scrollTrigger: {
-    //             trigger: '.products__text-animation',
-	// 			start: '-1% center',
-	// 			// end: () => '+=' + gsapTrack,
-	// 			// pin: true,
-    //             // scrub: true,
-    //             markers: true,
-	// 		},
-	// 		// y: '-=' + scrollSliderTransform + 'px',
-    //         marginTop: '-20px',
-    //         opacity: 1,
-    //         duration: 0.6,
-	// 	});
+//     //     gsap.to('.text-second_block_2', {
+// 	// 		scrollTrigger: {
+//     //             trigger: '.products__text-animation',
+// 	// 			start: '-1% center',
+// 	// 			// end: () => '+=' + gsapTrack,
+// 	// 			// pin: true,
+//     //             // scrub: true,
+//     //             markers: true,
+// 	// 		},
+// 	// 		// y: '-=' + scrollSliderTransform + 'px',
+//     //         marginTop: '-20px',
+//     //         opacity: 1,
+//     //         duration: 0.6,
+// 	// 	});
 
-    // }
+//     // }
 
-    // // animatTextOpen2();
+//     // // animatTextOpen2();
 
 
-    // function animatTextClose() {
+//     // function animatTextClose() {
         
-    //     gsap.registerPlugin(ScrollTrigger);
+//     //     gsap.registerPlugin(ScrollTrigger);
 
-    //     // let gsapTrack = $('.products__text-animation').height();
+//     //     // let gsapTrack = $('.products__text-animation').height();
 
-    //     gsap.to('.text-second_block', {
-	// 		scrollTrigger: {
-    //             trigger: '.products__text-animation',
-	// 			start: '-1% center',
-	// 			// end: () => '+=' + gsapTrack,
-	// 			// pin: true,
-    //             // scrub: true,
-    //             markers: true,
-	// 		},
-	// 		// y: '-=' + scrollSliderTransform + 'px',
-    //         // marginTop: '-100px',
-    //         yPercent: -100,
-    //         opacity: 0,
-    //         duration: 0.6,
-	// 	});
+//     //     gsap.to('.text-second_block', {
+// 	// 		scrollTrigger: {
+//     //             trigger: '.products__text-animation',
+// 	// 			start: '-1% center',
+// 	// 			// end: () => '+=' + gsapTrack,
+// 	// 			// pin: true,
+//     //             // scrub: true,
+//     //             markers: true,
+// 	// 		},
+// 	// 		// y: '-=' + scrollSliderTransform + 'px',
+//     //         // marginTop: '-100px',
+//     //         yPercent: -100,
+//     //         opacity: 0,
+//     //         duration: 0.6,
+// 	// 	});
 
-    // }
+//     // }
 
-    // animatTextClose();
+//     // animatTextClose();
 
 
-    // const products = document.querySelector('.products');
-    // const slogan = document.querySelector('.slogan');
+//     // const products = document.querySelector('.products');
+//     // const slogan = document.querySelector('.slogan');
 
-    // document.addEventListener('scroll', function () {
+//     // document.addEventListener('scroll', function () {
         
-    //     let coordProducts = products.getBoundingClientRect();
-    //     // console.log('coordProducts: ', coordProducts.top);
+//     //     let coordProducts = products.getBoundingClientRect();
+//     //     // console.log('coordProducts: ', coordProducts.top);
 
-    //     let coordSlogan = slogan.getBoundingClientRect();
-    //     console.log('coordSlogan: ', coordSlogan.top);
+//     //     let coordSlogan = slogan.getBoundingClientRect();
+//     //     console.log('coordSlogan: ', coordSlogan.top);
 
-    // });
+//     // });
         
 
-    //resize window
+//     //resize window
 
     
     
-	const debouncedResize = _.debounce(onWindowResize, 500);
-	function onWindowResize() {
-		// console.log('Window resized!');
-		location.reload();
-	}
-	$(window).on('resize', debouncedResize);
+// 	// const debouncedResize = _.debounce(onWindowResize, 500);
+// 	// function onWindowResize() {
+// 	// 	// console.log('Window resized!');
+// 	// 	location.reload();
+// 	// }
+// 	// $(window).on('resize', debouncedResize);
 
-});
+// });
 
 
 

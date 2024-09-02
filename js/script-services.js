@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const serviceLinks = document.querySelectorAll('.service__link');
         const navLinkPortfolio = document.querySelector('.nav__link-portfolio > a');
         const linkPortfolio = document.querySelector('.portfolio__link-wrapper > a');
+
+        const portfolioLink = document.querySelectorAll('.portfolio__link');
         // console.log('linkPortfolio: ', linkPortfolio.textContent);
 
         serviceLinks.forEach(element => {
@@ -32,6 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
             document.cookie = linkPortfolio.textContent;
             // console.log(document.cookie);
 
+        });
+
+        portfolioLink.forEach(element => {
+            element.addEventListener('click', (event) => {
+                document.cookie = event.target.innerText;
+
+                // console.log(document.cookie);
+            });
         });
     }
 

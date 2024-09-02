@@ -12,57 +12,57 @@ let flagFooterTop = true;
 let indexCoordFooter = 0;
 
 
-function scrollFooter() {
+// function scrollFooter() {
 
-    let coordFooter = footerSect.getBoundingClientRect();
-    // console.log('coordFooter: ', coordFooter.top);
+//     let coordFooter = footerSect.getBoundingClientRect();
+//     // console.log('coordFooter: ', coordFooter.top);
 
 
-    // indexCoordFooter = coordFooter.top - window.pageYOffset;
-    // console.log('indexCoordFooter: ', indexCoordFooter);
+//     // indexCoordFooter = coordFooter.top - window.pageYOffset;
+//     // console.log('indexCoordFooter: ', indexCoordFooter);
 
-    // if (coordFooter.top < 200 && coordFooter.top >= 50) {
+//     // if (coordFooter.top < 200 && coordFooter.top >= 50) {
 
-    //     // console.log('coordFooterTop: ', coordFooter.top);
+//     //     // console.log('coordFooterTop: ', coordFooter.top);
 
-    //     footerSect.classList.add('footer-sticky');
+//     //     footerSect.classList.add('footer-sticky');
 
-    //     // animateFooterContentOpen(footerContent);
-    //     // flagFooterTop = false;
-    // }
+//     //     // animateFooterContentOpen(footerContent);
+//     //     // flagFooterTop = false;
+//     // }
     
-    // // else if (footerDecorTop >= window.innerHeight && !flagFooterTop)
-    // else if (coordFooter.top < 50 || coordFooter.top > 200) {
+//     // // else if (footerDecorTop >= window.innerHeight && !flagFooterTop)
+//     // else if (coordFooter.top < 50 || coordFooter.top > 200) {
         
-    //     // animateFooterContentClose(footerContent);
-    //     // flagFooterTop = true; 
-    //     // footerSect.classList.remove('footer-sticky');
+//     //     // animateFooterContentClose(footerContent);
+//     //     // flagFooterTop = true; 
+//     //     // footerSect.classList.remove('footer-sticky');
 
         
-    // }
-}
-
-// function animateFooterContentOpen(footerContent) {
-//     transition.begin(footerContent, [
-//         "transform translate(0,0) translate(0,-420px) .8s ",
-//         "opacity 0 1 1s linear"
-//     ]);
+//     // }
 // }
 
-// function animateFooterContentClose(footerContent) {
-//     transition.begin(footerContent, [
-//         "transform translate(0,-420px) translate(0,0) .8s ",
-//         "opacity 1 0 1s linear"
-//     ]);
-// }
+// // function animateFooterContentOpen(footerContent) {
+// //     transition.begin(footerContent, [
+// //         "transform translate(0,0) translate(0,-420px) .8s ",
+// //         "opacity 0 1 1s linear"
+// //     ]);
+// // }
+
+// // function animateFooterContentClose(footerContent) {
+// //     transition.begin(footerContent, [
+// //         "transform translate(0,-420px) translate(0,0) .8s ",
+// //         "opacity 1 0 1s linear"
+// //     ]);
+// // }
 
 
-document.addEventListener('scroll', function () {
+// document.addEventListener('scroll', function () {
 
-    // let coordFooterDecor = footerDecor.getBoundingClientRect();
+//     // let coordFooterDecor = footerDecor.getBoundingClientRect();
     
-    // scrollFooter();
-});
+//     // scrollFooter();
+// });
 
 
 // scroll smooth block news with footer

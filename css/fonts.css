@@ -17,7 +17,7 @@
 }
 
 @font-face {
-    font-family: Fixel;
+    font-family: FixelText;
     font-weight: 500;
     font-display: swap;
     src: local('FixelMedium'), local('Fixel-Medium'), local('Fixel Medium'),
@@ -28,7 +28,7 @@
 }
 
 @font-face {
-    font-family: Fixel;
+    font-family: FixelText;
     font-weight: 400;
     font-display: swap;
     src: local('Fixel'), local('FixelRegular'), local('Fixel Regular'),
@@ -36,4 +36,26 @@
         url('../fonts/FixelDisplay-Regular.woff') format('woff'); */
         url('../fonts/FixelText-Regular.woff2') format('woff2'),
         url('../fonts/FixelText-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: FixelDisplay;
+    font-weight: 500;
+    font-display: swap;
+    src: local('FixelMedium'), local('Fixel-Medium'), local('Fixel Medium'),
+        url('../fonts/FixelDisplay-Medium.woff2') format('woff2'),
+        url('../fonts/FixelDisplay-Medium.woff') format('woff');
+        /* url('../fonts/FixelText-Medium.woff2') format('woff2'),
+        url('../fonts/FixelText-Medium.woff') format('woff'); */
+}
+
+@font-face {
+    font-family: FixelDisplay;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Fixel'), local('FixelRegular'), local('Fixel Regular'),
+        url('../fonts/FixelDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/FixelDisplay-Regular.woff') format('woff');
+        /* url('../fonts/FixelText-Regular.woff2') format('woff2'),
+        url('../fonts/FixelText-Regular.woff') format('woff'); */
 }

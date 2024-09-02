@@ -148,6 +148,7 @@
     /* z-index: 12; */
 }
 
+
 .video-fixed {
     position: fixed;
     left: 50%;
@@ -216,11 +217,38 @@
 }
 
 
+.guys__video-block .video {
+    background-color: transparent;
+    border-bottom: 1px solid transparent; /* хак для предотвращения мелькания при загрузке на некоторых версиях ios */
+    
+    &::-webkit-media-controls-panel {
+        display: none !important;
+        -webkit-appearance: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &::-webkit-media-controls-play-button {
+        display: none !important;
+        -webkit-appearance: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
 /* video button none */
 
 *::-webkit-media-controls-panel {
     display: none!important;
     -webkit-appearance: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Old shadow dom for play button */
@@ -228,6 +256,8 @@
 *::-webkit-media-controls-play-button {
     display: none!important;
     -webkit-appearance: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* New shadow dom for play button */
@@ -237,6 +267,8 @@
 *::-webkit-media-controls-start-playback-button {
     display: none!important;
     -webkit-appearance: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 

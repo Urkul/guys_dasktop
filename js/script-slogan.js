@@ -1,5 +1,6 @@
 
 const animatItems = document.querySelectorAll('._animat-item');
+const sloganTextLine = document.querySelectorAll('.slogan__text-line');
 
 if (animatItems.length > 0) {
 
@@ -43,3 +44,11 @@ if (animatItems.length > 0) {
         }
     }
 }
+
+sloganTextLine.addEventListener('mouseover', () => {
+    sloganTextLine.style.color = "#FF6831";
+});
+
+sloganTextLine.addEventListener('mouseout', () => {
+    sloganTextLine.style.color = "#cecece";
+});

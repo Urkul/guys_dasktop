@@ -272,6 +272,16 @@
 }
 
 .header__nav__submit:hover {
+    /* background-color: #FF6831;
+    border: 1px solid #FF6831; */
+    background-color: #E74F19;
+    border: 1px solid #E74F19;
+}
+
+.header__nav__submit:active,
+.header__nav__submit:focus {
+    /* background-color: #FF6831;
+    border: 1px solid #FF6831; */
     background-color: #FF6831;
     border: 1px solid #FF6831;
 }
@@ -715,7 +725,7 @@
 
     .header__container-mobile .header__nav__submit {
         right: 154px;
-        top: 84vh;
+        /* top: 84vh; */
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, 0%); 

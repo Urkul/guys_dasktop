@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const scriptPortfolio = () => {
+    const scriptPortfolioPage = () => {
 
         const portfolioTagsLinks = document.querySelectorAll('.portfolio__tags-link');
         const portfolioProjectsItem = document.querySelectorAll('.list-portfolio__item-wrapper');
         const allTags = document.querySelectorAll('.list-portfolio__item-link');
+        const navLinkPortfolio = document.querySelector('.nav__link-portfolio > a');
+
         let flagAll = true;
         let flagCases = false;
+        let flagActiveTags = false;
+        // let flagActiveCase = false;
 
         let cooka = '';
 
@@ -167,11 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // guysTagline.style.display = 'block';
 
             if (windowWidth <= 890) {
-                headerSubmit.style.display = 'none';
+                // headerSubmit.style.display = 'none';
             } else {
-                headerSubmit.style.display = 'block';
+                // headerSubmit.style.display = 'block';
             }
-            headerSlogan.style.display = 'block';
+            headerSlogan.style.display = 'none';
+            headerSubmit.style.display = 'none';
+
             headerNav.style.display = 'none';
 
             navIconBtn.style.display = 'flex';
@@ -355,12 +361,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 navbar.classList.add('scrolled');
 
                 headerNav.style.display = 'none';
-                headerSlogan.style.display = 'block';
-                headerSubmit.style.display = 'block';
+                // headerSlogan.style.display = 'block';
+                // headerSubmit.style.display = 'block';
                 headerBtn.style.display = 'block';
                 
-                headerSubmit.classList.remove('scrolled-back');
-                headerSlogan.classList.remove('scrolled-back');
+                // headerSubmit.classList.remove('scrolled-back');
+                // headerSlogan.classList.remove('scrolled-back');
 
                 // if (navbar.classList.contains('header__container-mobile')) {
                 //     headerNav.style.display = 'grid';
@@ -376,12 +382,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 headerNav.style.display = 'none';
                 headerBtn.style.display = 'block';
 
-                headerSubmit.classList.add('scrolled-back');
-                headerSlogan.classList.add('scrolled-back');
+                // headerSubmit.classList.add('scrolled-back');
+                // headerSlogan.classList.add('scrolled-back');
 
                 // setTimeout(() => {
-                    headerSubmit.style.display = 'none';
-                    headerSlogan.style.display = 'none';
+                    // headerSubmit.style.display = 'none';
+                    // headerSlogan.style.display = 'none';
                 // }, 600);
                 // console.log('windowScrollTop: ', windowScrollTop);
             }
@@ -688,8 +694,305 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        const checkBlocks = (count) => {
+            allTags.forEach(element => {
+                if (element.parentNode.parentNode.style.display === 'block') {
+                    count++;
+                }
+            });
+
+            // console.log(count);
+
+            if (count === 0) {
+                portfolioTagsLinks[0].classList.add('portfolio-active');
+                portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                allTags.forEach(element => {
+                    element.parentNode.parentNode.style.display = 'block';
+                })
+                cooka = '';
+                flagCases = false;    
+
+                for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                    portfolioTagsLinks[i].classList.remove('portfolio-active');
+                    portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                }
+            }
+        }
+
+        const checkLinks = () => {
+
+            for (let j = 1; j < portfolioTagsLinks.length; j++) {
+
+                // if ((portfolioTagsLinks[i].innerText.toLowerCase() != 'all' && flagCases) || (cooka != '')) {
+                    
+                //     allTags.forEach(element => {
+                //         if (cooka.includes(element.textContent)) {
+                //             element.parentNode.parentNode.style.display = 'block';
+                //         }
+                //         // activeTag();
+                //     });
+
+                        // console.log(allTags.parentNode.id);
+                if (portfolioTagsLinks[j].classList.contains('portfolio-active') ) {
+                    allTags.forEach(element => {
+                        if (element.textContent === portfolioTagsLinks[j].textContent) {
+                            if (element.parentNode.parentNode.style.display != 'block') {
+                                portfolioTagsLinks[j].classList.remove('portfolio-active');
+                                portfolioTagsLinks[j].style.backgroundColor = colorBg;    
+                            } else {
+                                portfolioTagsLinks[j].classList.add('portfolio-active');
+                                portfolioTagsLinks[j].style.backgroundColor = portfolioTagsActiveColor[j];    
+                            }
+                            // console.log("case - " + element.textContent);    
+                            // console.log("link - " + portfolioTagsLinks[j].textContent);    
+                        }
+                        // else if (element.textContent === portfolioTagsLinks[j].textContent && element.parentNode.parentNode.style.display === 'block') {
+                        //     portfolioTagsLinks[j].classList.add('portfolio-active');
+                        //     portfolioTagsLinks[j].style.backgroundColor = portfolioTagsActiveColor[j];
+    
+                        // }
+                    });
+                }
+                // if (!portfolioTagsLinks[j].classList.contains('portfolio-active') ) {
+                //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+    
+                //     allTags.forEach(element => {
+                //         element.parentNode.parentNode.style.display = 'block';
+                //     })
+                //     cooka = '';
+                //     flagCases = false;    
+    
+                // }
+                        // else if (regex.test(element.textContent) && !portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                        //     element.parentNode.parentNode.style.display = 'none';
+                        //     // console.log('нет');
+
+                        // }
+                    // }    
+                // }
+            }
+
+        }
+
+        const receivService2 = () => {
+            for (let i = 0; i < portfolioTagsLinks.length; i++) {
+
+                portfolioTagsLinks[i].addEventListener('click', (event) => {
+                    // console.log(event);
+                    // document.cookie = `name=${document.cookie}; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+                    const regex = new RegExp(event.target.innerText);
+                    flagActiveTags = false;
+                    // flagActiveCase = false;
+                    let flagTags = false;
+                    let countBlock = 0;
+    
+                    if (flagAll) {
+                        portfolioProjectsItem.forEach(element => {
+                            element.classList.remove('block');
+                        });
+                        // allTags.forEach(element => {
+                        //     if (document.cookie.includes(element.textContent)) {
+                        //         element.parentNode.parentNode.style.display = 'none';
+                        //         cooka = element.textContent;
+                        //     }
+                        //     activeTag();
+                        // }); 
+                        flagAll = false;
+                    }
+                    
+                    if (portfolioTagsLinks[i].classList.contains('portfolio-active') && i > 0) {
+                        portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        portfolioTagsLinks[i].classList.remove('portfolio-active');
+
+                        cooka = '';
+                        
+                        for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                            if (portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                flagActiveTags = true;
+                                break;
+                            }
+                        }
+
+                        if (!flagActiveTags) {
+                            portfolioTagsLinks[0].classList.add('portfolio-active');
+                            portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                            flagTags = true;
+
+                        }
+                        // else if (flagActiveTags) {
+                        //     // let countBlock = 0;
+                        //     allTags.forEach(element => {
+                        //         if (element.parentNode.parentNode.style.display === 'block') {
+                        //             countBlock++;
+                        //         }
+                        //     });
+
+                        //     console.log(countBlock);
+
+                        //     if (countBlock === 0) {
+                        //         portfolioTagsLinks[0].classList.add('portfolio-active');
+                        //         portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+    
+                        //         flagTags = true;    
+
+                        //         for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                        //             portfolioTagsLinks[i].classList.remove('portfolio-active');
+                        //             portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        //         }
+                        //     }
+                        // }
+
+                    } else if (!portfolioTagsLinks[i].classList.contains('portfolio-active') && i > 0) {
+                        portfolioTagsLinks[i].style.backgroundColor = portfolioTagsActiveColor[i];
+                        portfolioTagsLinks[i].classList.add('portfolio-active');
+                        
+                        if (portfolioTagsLinks[0].classList.contains('portfolio-active')) {
+                            portfolioTagsLinks[0].classList.remove('portfolio-active');
+                            portfolioTagsLinks[0].style.backgroundColor = colorBg;
+                        }
+                    } else if (i === 0) {
+                        portfolioTagsLinks[0].classList.add('portfolio-active');
+                        portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                        for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                            portfolioTagsLinks[i].classList.remove('portfolio-active');
+                            portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        }
+
+                    }
+    
+
+
+                    // portfolioTagsLinks[i].classList.remove('colorBg');
+                    // if (i > 0 && flagActiveTags) {
+                    //     portfolioTagsLinks[0].classList.remove('portfolio-active');
+                    //     // portfolioTagsLinks[0].classList.add('colorBg');
+                    //     portfolioTagsLinks[0].style.backgroundColor = colorBg;
+                    // }
+                    // else if (i > 0 && !flagActiveTags) {
+                    //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                    //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                    // }
+                    // else {
+                    //     for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                    //         portfolioTagsLinks[i].classList.remove('portfolio-active');
+                    //         // portfolioTagsLinks[i].classList.add('colorBg');
+                    //         portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                    //         // countActiveTags = 0;
+                    //     };
+                    // }
+    
+                    // const search = document.querySelector('#search');
+                    // const allTags = document.querySelectorAll('.list-portfolio__item-link');
+                    // search.onkeyup = function (event) {
+                    // console.log(event.target.innerText);
+    
+                
+                    // const regex = new RegExp(event.target.innerText.toLowerCase());
+                    // const regex = new RegExp(event.target.innerText);
+                    // console.log('regex: ', regex);
+    
+                    if (portfolioTagsLinks[i].innerText.toLowerCase() === 'all' || flagTags) {
+                        // console.log('regex: ', regex);
+    
+                        // if (cooka != '') {
+                        //     allTags.forEach(element => {
+                        //         if (cooka.includes(element.textContent)) {
+                        //             element.parentNode.parentNode.style.display = 'none';
+                        //         }
+                        //         cooka = '';
+                        //         // activeTag();
+                        //     });  
+                        // }
+    
+                        allTags.forEach(element => {
+                            element.parentNode.parentNode.style.display = 'block';
+                        })
+                        cooka = '';
+                        flagCases = false;
+                        // console.log('yes');
+    
+                    }
+                    else if (portfolioTagsLinks[i].innerText.toLowerCase() != 'all' && !flagCases) {
+    
+                        allTags.forEach(element => {
+                            element.parentNode.parentNode.style.display = 'none';
+                        })
+                        flagCases = true;
+                    }
+    
+                    if ((portfolioTagsLinks[i].innerText.toLowerCase() != 'all' && flagCases) || (cooka != '')) {
+                    
+                        allTags.forEach(element => {
+                            if (cooka.includes(element.textContent)) {
+                                element.parentNode.parentNode.style.display = 'block';
+                            }
+                            // activeTag();
+                        });
+    
+                        allTags.forEach(element => {
+                            // console.log(allTags.parentNode.id);
+                            if (regex.test(element.textContent) && portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                element.parentNode.parentNode.style.display = 'block';
+                                // console.log('да');
+                                // console.log(element.parentNode.parentNode);
+                            }
+                            else if (regex.test(element.textContent) && !portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                element.parentNode.parentNode.style.display = 'none';
+                                // console.log('нет');
+        
+                            }
+                        })
+                        // }    
+                    }
+
+                    checkBlocks(countBlock);
+                    checkLinks();
+
+                    // allTags.forEach(element => {
+                    //     if (element.parentNode.parentNode.style.display === 'block') {
+                    //         countBlock++;
+                    //     }
+                    // });
+
+                    // console.log(countBlock);
+
+                    // if (countBlock === 0) {
+                    //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                    //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                    //     allTags.forEach(element => {
+                    //         element.parentNode.parentNode.style.display = 'block';
+                    //     })
+                    //     cooka = '';
+                    //     flagCases = false;    
+
+                    //     for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                    //         portfolioTagsLinks[i].classList.remove('portfolio-active');
+                    //         portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                    //     }
+                    // }
+                });
+    
+                // receivServiceСookie();
+    
+            }
+        }
+
+        navLinkPortfolio.addEventListener('click', () => {
+            document.cookie = navLinkPortfolio.textContent;
+        });
+
+        // console.log('document.cookie: ', document.cookie);
+
+
         receivServiceСookie();
-        receivService();
+        receivService2();
+
 
 
         // receivServiceСookie();
@@ -728,21 +1031,21 @@ document.addEventListener("DOMContentLoaded", () => {
         //     portfolioProjectsItem[i].classList.remove('proj-' + (i + 1));
         // }
 
-        for (let i = 0; i < portfolioProjectsItem.length; i++) {
-            // portfolioProjectsItem[i].addEventListener('click', () => portfolioProjectsItem[i].classList.add('proj-' + (i + 1)));
-            portfolioProjectsItem[i].addEventListener('click', () => {
-                document.cookie = document.portfolioProjectsItem[i].dataset.indexNumber;
-                // console.log('document.cookie: ', document.cookie);
-            });
+        // for (let i = 0; i < portfolioProjectsItem.length; i++) {
+        //     // portfolioProjectsItem[i].addEventListener('click', () => portfolioProjectsItem[i].classList.add('proj-' + (i + 1)));
+        //     portfolioProjectsItem[i].addEventListener('click', () => {
+        //         document.cookie = document.portfolioProjectsItem[i].dataset.indexNumber;
+        //         console.log('document.cookie: ', document.cookie);
+        //     });
 
-            // function setCookie(){
-            //     document.cookie = "mycookie="+document.getElementById("input").value;
-            // }
-        }
+        //     // function setCookie(){
+        //     //     document.cookie = "mycookie="+document.getElementById("input").value;
+        //     // }
+        // }
         
     }
     
-    scriptPortfolio();
+    scriptPortfolioPage();
 
 });
 

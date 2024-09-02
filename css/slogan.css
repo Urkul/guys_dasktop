@@ -63,7 +63,7 @@
     font-size: 86px;
     font-weight: 500;
     line-height: 130%;
-    letter-spacing: -2.45px;
+    /* letter-spacing: -2.45px; */
     text-transform: uppercase;
     text-align: justify;
     cursor: pointer;

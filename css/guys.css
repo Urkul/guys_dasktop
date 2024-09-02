@@ -683,4 +683,18 @@
     .guys__content-tagline {
         bottom: -280px;
     }
+
+    .guys__letter-wrapper-item-1:hover .guys__letter-change:nth-of-type(1),
+    .guys__letter-wrapper-item-2:hover .guys__letter-change:nth-of-type(1),
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(1),
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(1) {
+        display: block;
+    }
+
+    .guys__letter-wrapper-item-1:hover .guys__letter-change:nth-of-type(2),
+    .guys__letter-wrapper-item-2:hover .guys__letter-change:nth-of-type(2),
+    .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2),
+    .guys__letter-wrapper-item-4:hover .guys__letter-change:nth-of-type(2) {
+        display: none;
+    }
 }

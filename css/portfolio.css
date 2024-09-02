@@ -739,6 +739,8 @@
     }
 
     .portfolio__link-wrapper a {
+        /* border: 1px solid var(--dark-bg-1); */
+
         border-radius: 100px;
         padding: 28px 110px;
         width: 100%;
@@ -756,10 +758,15 @@
         color: var(--bg-colour);
     }
 
+    .portfolio__link-wrapper a:hover {
+        background-color:  var(--accent);
+        /* border: 1px solid  var(--accent); */
+    }
+
     .portfolio__link-wrapper a:active, 
     .portfolio__link-wrapper a:focus {
         background-color:  #e74f19;
-        border: 1px solid  #e74f19;
+        /* border: 1px solid  #e74f19; */
     }
 
     .contacts__submit:hover {

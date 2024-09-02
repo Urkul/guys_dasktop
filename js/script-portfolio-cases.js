@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             slidesPerView: 1,
             spaceBetween: 15,
-            // freeMode: true,
+            freeMode: true,
 
 
             // breakpoints: {
@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
             // console.log('coordSlideImageWrapper: ', coordSlideImageWrapper.width);
     
             widthBorder = (window.innerWidth - coordSlideImageWrapper.width) / 2;
-            sliderBorderLeft.style.width = widthBorder + 'px';
-            sliderBorderRight.style.width = widthBorder + 'px';
+            sliderBorderLeft.style.width = widthBorder - 15 + 'px';
+            sliderBorderRight.style.width = widthBorder - 15 + 'px';
             const coordCliderBorderLeft = sliderBorderLeft.getBoundingClientRect();
             // console.log('coordCliderBorderLeft: ', coordCliderBorderLeft.width);    
         } else {
             sliderContainer.classList.add('container');
-            sliderBorderLeft.style.width = 0 + 'px';
-            sliderBorderRight.style.width = 0 + 'px';
+            sliderBorderLeft.style.width = 15 + 'px';
+            sliderBorderRight.style.width = 15 + 'px';
 
         }
 

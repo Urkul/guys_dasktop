@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let portfolioTagsActiveColor = {    
             all: "#FF6831",  
             branding: "#7FCEFF",        
-            video_product: "#41EAC8",        
+            video_production: "#41EAC8",        
             design: "#F68DD4",        
             d3: "#C59AED",        
             motion: "#EA70A6",        

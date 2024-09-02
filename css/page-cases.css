@@ -268,8 +268,10 @@
     text-align: center;
     /* position: relative; */
     /* max-width: 1240px; */
-    max-width: 920px;
-    height: 480px;
+    /* max-width: 920px;
+    height: 480px; */
+    max-width: 1050px;
+    height: 534px;
     margin: 0 auto;
 }
 
@@ -589,7 +591,7 @@
 
     .case-slogan__slide-image-wrapper {
         max-width: 640px;
-        height: 340px;
+        height: 358px;
     }
 
     .case-slogan__slide-pagination-btn-prev {
@@ -632,7 +634,7 @@
 
     .case-slogan__slide-image-wrapper {
         max-width: 480px;
-        height: 280px;
+        /* height: 280px; */
     }
 
 }
@@ -663,7 +665,7 @@
 
     .case-slogan__slide-image-wrapper {
         max-width: 430px;
-        height: 60vh;
+        /* height: 60vh; */
     }
 
     /* .swiper-wrapper {
@@ -688,13 +690,12 @@
     }  
     
     .case-similar-projects__content .portfolio__link-wrapper.block a {
-        display: flex;
+        /* display: flex;
         justify-content: center;
 
         border-radius: 100px;
         padding: 28px 110px;
         max-width: 358px;
-        /* width: 100%; */
         height: 82px; 
         background: var(--dark-bg-1);
 
@@ -702,7 +703,32 @@
         font-size: 24px;
         line-height: 1.1;
         text-align: center;
+        color: var(--bg-colour); */
+        
+        border: 1px solid var(--dark-bg-1);
+
+        border-radius: 100px;
+        padding: 28px 110px;
+        width: 100%;
+        height: 82px; 
+        background: var(--dark-bg-1);
+
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 110%;
+        text-align: center;
         color: var(--bg-colour);
+    }
+    
+    .case-similar-projects__content .portfolio__link-wrapper.block a:hover {
+        background-color: var(--accent);
+        border: 1px solid var(--accent);
+    }
+
+    .case-similar-projects__content .portfolio__link-wrapper.block a:active, 
+    .case-similar-projects__content .portfolio__link-wrapper.block a:focus {
+        background-color: #e74f19;
+        border: 1px solid #e74f19;
     }
 
 }

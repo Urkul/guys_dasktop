@@ -740,7 +740,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             if (element.parentNode.parentNode.style.display != 'block') {
                                 portfolioTagsLinks[j].classList.remove('portfolio-active');
                                 portfolioTagsLinks[j].style.backgroundColor = colorBg;    
-                            } else {
+                            } 
+                            else {
                                 portfolioTagsLinks[j].classList.add('portfolio-active');
                                 portfolioTagsLinks[j].style.backgroundColor = portfolioTagsActiveColor[j];    
                             }
@@ -772,6 +773,51 @@ document.addEventListener("DOMContentLoaded", () => {
                         // }
                     // }    
                 // }
+            }
+
+        }
+
+        const checkLinksActive = () => {
+
+            let countLinksActive;
+
+            for (let j = 1; j < portfolioTagsLinks.length; j++) {
+
+                countLinksActive = false;
+
+                if (portfolioTagsLinks[j].classList.contains('portfolio-active')) {
+                    countLinksActive = true;
+                    break;
+                }
+                // if (!portfolioTagsLinks[j].classList.contains('portfolio-active') ) {
+                //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+    
+                //     allTags.forEach(element => {
+                //         element.parentNode.parentNode.style.display = 'block';
+                //     })
+                //     cooka = '';
+                //     flagCases = false;    
+    
+                // }
+                        // else if (regex.test(element.textContent) && !portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                        //     element.parentNode.parentNode.style.display = 'none';
+                        //     // console.log('нет');
+
+                        // }
+                    // }    
+                // }
+            }
+
+            if (!countLinksActive) {
+                portfolioTagsLinks[0].classList.add('portfolio-active');
+                portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                allTags.forEach(element => {
+                    element.parentNode.parentNode.style.display = 'block';
+                })
+                cooka = '';
+                flagCases = false; 
             }
 
         }
@@ -952,6 +998,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     checkBlocks(countBlock);
                     checkLinks();
+                    checkLinksActive();
 
                     // allTags.forEach(element => {
                     //     if (element.parentNode.parentNode.style.display === 'block') {
@@ -992,7 +1039,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         receivServiceСookie();
         receivService2();
-
 
 
         // receivServiceСookie();

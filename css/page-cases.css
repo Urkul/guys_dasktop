@@ -709,7 +709,8 @@
 
         border-radius: 100px;
         padding: 28px 110px;
-        width: 100%;
+        /* width: 100%; */
+        width: 358px;
         height: 82px; 
         background: var(--dark-bg-1);
 

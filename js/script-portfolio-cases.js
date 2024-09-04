@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             slidesPerView: 1,
             spaceBetween: 15,
-            freeMode: true,
+            // freeMode: true,
 
 
             // breakpoints: {

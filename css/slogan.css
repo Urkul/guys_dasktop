@@ -297,13 +297,13 @@
 @media (max-width: 520px) {
     .slogan {
         /* top: 50px; */
-        top: 30px;
+        /* top: 30px; */
     }
 }
 
 @media (max-width: 460px) {
     .slogan {
-        top: 40px;
+        /* top: 40px; */
     }
 
     /* .slogan__text-wrapper {

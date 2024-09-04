@@ -696,8 +696,8 @@
     .portfolio__block {
         flex-direction: column;
         flex-flow: column-reverse;
-        gap: 90px;
-        padding-bottom: 120px;
+        /* gap: 65px; */
+        padding-bottom: 200px;
     }
 
     .portfolio__slider-wrapper {
@@ -742,9 +742,14 @@
         /* border: 1px solid var(--dark-bg-1); */
 
         border-radius: 100px;
+        display: inline-block;
         padding: 28px 110px;
-        width: 100%;
-        height: 82px; 
+        /* width: 100%;
+        height: 82px;  */
+
+        /* padding: 9px 24px; */
+        width: 358px;
+        height: 82px;
         background: var(--dark-bg-1);
 
         font-weight: 500;
@@ -752,6 +757,11 @@
         line-height: 1.1;
         text-align: center;
         color: var(--bg-colour);
+
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 0);
     }
 
     .portfolio__link-wrapper a:hover {

@@ -251,7 +251,7 @@
     .slogan__text-seventh_line,
     .slogan__text-eighth_line {
         justify-content: start;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
     }
 
     .slogan__text-first_line .first_line-1:hover,

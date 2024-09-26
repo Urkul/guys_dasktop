@@ -45,10 +45,21 @@ if (animatItems.length > 0) {
     }
 }
 
-sloganTextLine.addEventListener('mouseover', () => {
-    sloganTextLine.style.color = "#FF6831";
+// sloganTextLine.addEventListener('mouseover', () => {
+//     sloganTextLine.style.color = "#FF6831";
+// });
+
+// sloganTextLine.addEventListener('mouseout', () => {
+//     sloganTextLine.style.color = "#cecece";
+// });
+
+sloganTextLine.forEach((item) => {
+    item.addEventListener('mouseover', () => {
+        item.style.color = "#FF6831";
+    });
+    
+    item.addEventListener('mouseout', () => {
+        item.style.color = "#cecece";
+    });
 });
 
-sloganTextLine.addEventListener('mouseout', () => {
-    sloganTextLine.style.color = "#cecece";
-});

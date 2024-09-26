@@ -1030,6 +1030,235 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        const receivService3 = () => {
+            for (let i = 0; i < portfolioTagsLinks.length; i++) {
+
+                portfolioTagsLinks[i].addEventListener('click', (event) => {
+                    // console.log(event);
+                    // document.cookie = `name=${document.cookie}; expires=Thu, 01 Jan 1970 00:00:00 GMT;`;
+                    const regex = new RegExp(event.target.innerText);
+                    flagActiveTags = false;
+                    // flagActiveCase = false;
+                    let flagTags = false;
+                    let countBlock = 0;
+    
+                    if (flagAll) {
+                        portfolioProjectsItem.forEach(element => {
+                            element.classList.remove('block');
+                        });
+                        // allTags.forEach(element => {
+                        //     if (document.cookie.includes(element.textContent)) {
+                        //         element.parentNode.parentNode.style.display = 'none';
+                        //         cooka = element.textContent;
+                        //     }
+                        //     activeTag();
+                        // }); 
+                        flagAll = false;
+                    }
+                    
+                    if (portfolioTagsLinks[i].classList.contains('portfolio-active') && i > 0) {
+                        portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        portfolioTagsLinks[i].classList.remove('portfolio-active');
+
+                        cooka = '';
+                        
+                        for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                            if (portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                flagActiveTags = true;
+                                break;
+                            }
+                        }
+
+                        if (!flagActiveTags) {
+                            portfolioTagsLinks[0].classList.add('portfolio-active');
+                            portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                            flagTags = true;
+
+                        }
+                        // else if (flagActiveTags) {
+                        //     // let countBlock = 0;
+                        //     allTags.forEach(element => {
+                        //         if (element.parentNode.parentNode.style.display === 'block') {
+                        //             countBlock++;
+                        //         }
+                        //     });
+
+                        //     console.log(countBlock);
+
+                        //     if (countBlock === 0) {
+                        //         portfolioTagsLinks[0].classList.add('portfolio-active');
+                        //         portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+    
+                        //         flagTags = true;    
+
+                        //         for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                        //             portfolioTagsLinks[i].classList.remove('portfolio-active');
+                        //             portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        //         }
+                        //     }
+                        // }
+
+                    } else if (!portfolioTagsLinks[i].classList.contains('portfolio-active') && i > 0) {
+                        portfolioTagsLinks[i].style.backgroundColor = portfolioTagsActiveColor[i];
+                        portfolioTagsLinks[i].classList.add('portfolio-active');
+                        
+                        if (portfolioTagsLinks[0].classList.contains('portfolio-active')) {
+                            portfolioTagsLinks[0].classList.remove('portfolio-active');
+                            portfolioTagsLinks[0].style.backgroundColor = colorBg;
+                        }
+                    } else if (i === 0) {
+                        portfolioTagsLinks[0].classList.add('portfolio-active');
+                        portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                        for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                            portfolioTagsLinks[i].classList.remove('portfolio-active');
+                            portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                        }
+
+                    }
+    
+
+
+                    // portfolioTagsLinks[i].classList.remove('colorBg');
+                    // if (i > 0 && flagActiveTags) {
+                    //     portfolioTagsLinks[0].classList.remove('portfolio-active');
+                    //     // portfolioTagsLinks[0].classList.add('colorBg');
+                    //     portfolioTagsLinks[0].style.backgroundColor = colorBg;
+                    // }
+                    // else if (i > 0 && !flagActiveTags) {
+                    //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                    //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                    // }
+                    // else {
+                    //     for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                    //         portfolioTagsLinks[i].classList.remove('portfolio-active');
+                    //         // portfolioTagsLinks[i].classList.add('colorBg');
+                    //         portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                    //         // countActiveTags = 0;
+                    //     };
+                    // }
+    
+                    // const search = document.querySelector('#search');
+                    // const allTags = document.querySelectorAll('.list-portfolio__item-link');
+                    // search.onkeyup = function (event) {
+                    // console.log(event.target.innerText);
+    
+                
+                    // const regex = new RegExp(event.target.innerText.toLowerCase());
+                    // const regex = new RegExp(event.target.innerText);
+                    // console.log('regex: ', regex);
+    
+                    if (portfolioTagsLinks[i].innerText.toLowerCase() === 'all' || flagTags) {
+                        // console.log('regex: ', regex);
+    
+                        // if (cooka != '') {
+                        //     allTags.forEach(element => {
+                        //         if (cooka.includes(element.textContent)) {
+                        //             element.parentNode.parentNode.style.display = 'none';
+                        //         }
+                        //         cooka = '';
+                        //         // activeTag();
+                        //     });  
+                        // }
+    
+                        allTags.forEach(element => {
+                            element.parentNode.parentNode.style.display = 'block';
+                        })
+                        cooka = '';
+                        flagCases = false;
+                        // console.log('yes');
+    
+                    }
+                    else if (portfolioTagsLinks[i].innerText.toLowerCase() != 'all' && !flagCases) {
+    
+                        allTags.forEach(element => {
+                            element.parentNode.parentNode.style.display = 'none';
+                        })
+                        flagCases = true;
+                    }
+    
+                    if ((portfolioTagsLinks[i].innerText.toLowerCase() != 'all' && flagCases) || (cooka != '')) {
+                    
+                        allTags.forEach(element => {
+                            if (cooka.includes(element.textContent)) {
+                                element.parentNode.parentNode.style.display = 'block';
+                            }
+                            // activeTag();
+                        });
+    
+                        allTags.forEach(element => {
+                            // console.log(allTags.parentNode.id);
+                            if (regex.test(element.textContent) && portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                element.parentNode.parentNode.style.display = 'block';
+                                // console.log('да');
+                                // console.log(element.parentNode.parentNode);
+                            }
+                            // else if (regex.test(element.textContent) && !portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                            else if (regex.test(element.textContent) && !portfolioTagsLinks[i].classList.contains('portfolio-active')) {
+                                // element.parentNode.parentNode.style.display = 'none';
+                                let childs = element.parentNode.childNodes;
+                                let flagLink = true;
+
+                                for (let link of portfolioTagsLinks) {
+                                    for (let child of childs) {
+                                        // console.log(child.textContent);
+                                        if (link.textContent === child.textContent && link.classList.contains('portfolio-active')) {
+                                            // console.log(link.textContent);
+                                            flagLink = false;
+                                            element.parentNode.parentNode.style.display = 'block';
+                                            break;
+                                        } else {
+                                            element.parentNode.parentNode.style.display = 'none';
+                                        }
+                                    }
+                                    if (!flagLink) {
+                                        break;
+                                    }
+                                }
+                                // console.log('element.parentNode.parentNode: ', element.parentNode);
+                                // console.log('нет');
+        
+                            }
+                        })
+                        // }    
+                    }
+
+                    checkBlocks(countBlock);
+                    checkLinks();
+                    checkLinksActive();
+
+                    // allTags.forEach(element => {
+                    //     if (element.parentNode.parentNode.style.display === 'block') {
+                    //         countBlock++;
+                    //     }
+                    // });
+
+                    // console.log(countBlock);
+
+                    // if (countBlock === 0) {
+                    //     portfolioTagsLinks[0].classList.add('portfolio-active');
+                    //     portfolioTagsLinks[0].style.backgroundColor = portfolioTagsActiveColor[0];
+
+                    //     allTags.forEach(element => {
+                    //         element.parentNode.parentNode.style.display = 'block';
+                    //     })
+                    //     cooka = '';
+                    //     flagCases = false;    
+
+                    //     for (let i = 1; i < portfolioTagsLinks.length; i++) {
+                    //         portfolioTagsLinks[i].classList.remove('portfolio-active');
+                    //         portfolioTagsLinks[i].style.backgroundColor = colorBg;
+                    //     }
+                    // }
+                });
+    
+                // receivServiceСookie();
+    
+            }
+        }
+
         navLinkPortfolio.addEventListener('click', () => {
             document.cookie = navLinkPortfolio.textContent;
         });
@@ -1038,7 +1267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         receivServiceСookie();
-        receivService2();
+        receivService3();
 
 
         // receivServiceСookie();

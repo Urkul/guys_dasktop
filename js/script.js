@@ -584,43 +584,104 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        const agencyMail = document.querySelector('.footer__agency-mail');
+        // const agencyMail = document.querySelectorAll('.footer__agency-mail');
+
+        // async function copyText(text) {
+        //     // Пытаемся скопировать текст в буфер обмена и обрабатываем возможные ошибки
+        //     await navigator.clipboard.writeText(text).catch(console.error);
+        // }
+
+        // function funcCopyLink() {
+        //         /* Get the text field */
+        //         // var copyText = document.getElementById("myInput");
+
+        //         /* Select the text field */
+        //         // agencyMail.select();
+        //         const copyLink = agencyMail[2].textContent;
+        //         // console.log('copyLink: ', copyLink);
+
+        //         /* Copy the text inside the text field */
+        //         // document.execCommand("copy");
+        //         copyText(copyLink);
+
+        //         /* Alert the copied text */
+        //     // alert("Copied the text: " + copyLink);
+            
+        //     const tooltip = document.getElementById("tooltipResume");
+        //     tooltip.innerHTML = "Скопійовано в буфер обміну: " + copyLink;
+            
+        // }
+
+        // function outFunc() {
+        //     const tooltip = document.getElementById("tooltipResume");
+        //     tooltip.innerHTML = "Скопіювати в буфер обміну";
+        // }
+
+        // agencyMail[2].addEventListener('click', funcCopyLink);
+        // agencyMail[2].addEventListener('mouseout', outFunc);
+        // // funcCopyLink();
+
+        const footerSiteList = document.querySelector('.footer__site-list');
+        const agencyMails = document.querySelectorAll('.footer__agency-mail');
+        let index = -1;
 
         async function copyText(text) {
             // Пытаемся скопировать текст в буфер обмена и обрабатываем возможные ошибки
             await navigator.clipboard.writeText(text).catch(console.error);
         }
 
-        function funcCopyLink() {
+        function funcCopyLink(index, link) {
                 /* Get the text field */
                 // var copyText = document.getElementById("myInput");
 
                 /* Select the text field */
                 // agencyMail.select();
-                const copyLink = agencyMail.textContent;
+                // const copyLink = agencyMail[2].textContent;
                 // console.log('copyLink: ', copyLink);
 
                 /* Copy the text inside the text field */
                 // document.execCommand("copy");
-                copyText(copyLink);
+                // copyText(copyLink);
 
                 /* Alert the copied text */
             // alert("Copied the text: " + copyLink);
             
-            const tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Скопійовано в буфер обміну: " + copyLink;
-            
+            const tooltips = document.querySelectorAll(".tooltiptext");
+            tooltips.forEach((item, i) => {
+                if (i === index) {
+                    item.innerHTML = `Скопійовано<br>в буфер обміну: ${link}`;
+                }
+            });            
         }
 
         function outFunc() {
-            const tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Скопіювати в буфер обміну";
+            const tooltips = document.querySelectorAll(".tooltiptext");
+            tooltips.forEach((item, i) => {
+                item.innerHTML = `Скопіювати<br>в буфер обміну`;
+            });
         }
 
-        agencyMail.addEventListener('click', funcCopyLink);
-        agencyMail.addEventListener('mouseout', outFunc);
+        // agencyMail[2].addEventListener('click', funcCopyLink);
+        // agencyMail[2].addEventListener('mouseout', outFunc);
         // funcCopyLink();
 
+        footerSiteList.addEventListener('click', (event) => {
+            const target = event.target;
+            // console.log('target: ', target);
+            if (target.closest('.footer__agency-mail')) {
+                const copyLink = target.textContent;
+                copyText(copyLink);
+                index = [...document.querySelectorAll('.footer__agency-mail')].indexOf(event.target);
+                // console.log('index: ', index);
+                funcCopyLink(index, copyLink);
+            }
+        });
+
+        agencyMails.forEach((item) => {
+            item.addEventListener('mouseout', outFunc);
+        });
+
+        
 
 
         // button scroll up

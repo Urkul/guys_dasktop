@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // console.log('coordSlideImageWrapper: ', coordSlideImageWrapper.width);
     
             widthBorder = (window.innerWidth - coordSlideImageWrapper.width) / 2;
-            sliderBorderLeft.style.width = widthBorder - 9 + 'px';
-            sliderBorderRight.style.width = widthBorder - 9 + 'px';
+            sliderBorderLeft.style.width = widthBorder - 15 + 'px';
+            sliderBorderRight.style.width = widthBorder - 15 + 'px';
             const coordCliderBorderLeft = sliderBorderLeft.getBoundingClientRect();
             console.log('coordCliderBorderLeft: ', coordCliderBorderLeft.width);    
         } else {

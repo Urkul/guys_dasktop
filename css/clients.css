@@ -94,6 +94,15 @@
 
 .clients__ticker-item:hover {
     border: 1px solid var(--accent);
+
+    -webkit-transform: rotateZ(-2deg) scale(0.9);
+    -ms-transform: rotateZ(-2deg) scale(0.9);
+    transform: rotateZ(-2deg) scale(0.9);
+
+    -webkit-box-shadow: inset 0px 0px 24px -11px rgba(255,104,49,0.45);
+    -moz-box-shadow: inset 0px 0px 24px -11px rgba(255,104,49,0.45);
+    box-shadow: inset 0px 0px 24px -11px rgba(255,104,49,0.45);
+
 }
 
 .clients__ticker-item .clients__ticker-item_svg path{

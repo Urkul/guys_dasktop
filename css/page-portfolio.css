@@ -111,10 +111,12 @@
     /* top: 32px; */
     top: 34px;
     left: 43px;
+    right: 43px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    row-gap: 8px;
 
+    max-width: 65%;
 }
 
 .list-portfolio__item-link {
@@ -126,6 +128,8 @@
     font-size: 14px;
     line-height: 110%;
     color: var(--dark-text);
+
+    margin-right: 8px;
 }
 
 

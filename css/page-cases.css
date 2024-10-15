@@ -95,11 +95,17 @@
 .case-slogan__text2 {
     max-width: 970px;
     padding-top: 167px;
-    padding-bottom: 167px;
+    padding-bottom: 135px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    gap: 75px;
+    /* display: flex;
+    gap: 75px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 60px;
+    grid-row-gap: 0px;
+
     font-weight: 500;
     font-size: 24px;
     line-height: 1.2;
@@ -120,7 +126,8 @@
 
 .case-slogan-bg {
     position: sticky;
-	top: 85px;
+	/* top: 85px; */
+	top: 79px;
     background-color: var(--bg-color-1);
 }
 
@@ -533,6 +540,7 @@
 }
 
 .case-similar-projects__title {
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: 98px;
     text-transform: uppercase;
@@ -745,14 +753,21 @@
 
     .case-slogan__text {
         padding-top: 60px;
-        padding-bottom: 60px;
+        /* padding-bottom: 60px; */
+        padding-bottom: 100px;
     }
 
     .case-slogan__text2 {
-        flex-direction: column;
-        gap: 24px;
+        /* flex-direction: column;
+        gap: 24px; */
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(2, 1fr); */
+        grid-column-gap: 0px;
+        grid-row-gap: 24px;
+
         padding-top: 54px;
-        padding-bottom: 54px;
+        padding-bottom: 40px;
     }
 
     .case-slogan-bg3 {
@@ -853,10 +868,12 @@
 
     .case-slogan__text {
         text-indent: 0%;
+        padding-bottom: 60px;
     }
 
     .case-slogan.case4-slogan2 {
         display: block;
+        top: 20px;
     }
 
     .case4-slogan__text .case4-slogan__text-p1 {
@@ -877,7 +894,7 @@
     }
 
     .case-slogan-bg3 {
-        top: 0;
+        top: 0px;
         padding-bottom: 0;
     }
 

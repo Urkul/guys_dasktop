@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // section contacts
     // inputmask and validate
     const phone = document.getElementById('phone');
-    const imPhone = new Inputmask('+3(999)999-99-99');
+    const imPhone = new Inputmask('+38(999)999-99-99');
 
     imPhone.mask(phone);
 

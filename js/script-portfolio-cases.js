@@ -95,10 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // console.log('coordSlideImageWrapper: ', coordSlideImageWrapper.width);
     
             widthBorder = (window.innerWidth - coordSlideImageWrapper.width) / 2;
-            sliderBorderLeft.style.width = widthBorder - 8 + 'px';
-            sliderBorderRight.style.width = widthBorder - 8 + 'px';
-            const coordCliderBorderLeft = sliderBorderLeft.getBoundingClientRect();
-            console.log('coordCliderBorderLeft: ', coordCliderBorderLeft.width);    
+            sliderBorderLeft.style.width = widthBorder - 20 + 'px';
+            sliderBorderRight.style.width = widthBorder - 20 + 'px';
+            // const coordCliderBorderLeft = sliderBorderLeft.getBoundingClientRect();
+            // console.log('coordCliderBorderLeft: ', coordCliderBorderLeft.width);    
         } else {
             sliderContainerMobil.classList.add('container');
             sliderBorderLeft.style.width = 15 + 'px';

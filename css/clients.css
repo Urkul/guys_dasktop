@@ -1,9 +1,10 @@
 .clients {
     padding-top: 120px;
     padding-bottom: 120px;
-    position: relative;
-    /* position: sticky;
-    top: 0; */
+    /* position: relative; */
+    position: sticky;
+    top: 20px;
+    /* top: 67px; */
     background-color: var(--bg-color-1);
 }
 
@@ -114,7 +115,7 @@
 }
 
 .marquee {
-    animation: ticker 25s linear infinite;
+    animation: ticker 40s linear infinite;
 }
 
 .reverce {

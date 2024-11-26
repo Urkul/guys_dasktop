@@ -239,11 +239,18 @@ else if (windowWidth <= 460) {
 else {
     
     // run function scrolling the page
-    window.addEventListener('scroll', function() {
-        videoBlockScroll(guysVideoElement);
-    });
+    if (window.screen.width > window.screen.height) {
+        
+        window.addEventListener('scroll', function() {
+            videoBlockScroll(guysVideoElement);
+        });
+    
+        videoBlockScroll(guysVideoElement);    
 
-    videoBlockScroll(guysVideoElement);
+    } else {
+        guysVideoElement.classList.remove('video-fixed');
+        guysVideoElement.classList.remove('video-relative');    
+    }
 }
 
 // const videoBlock = document.querySelector('.guys__video-block');

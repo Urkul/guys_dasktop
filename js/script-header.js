@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let windowScrollTop = window.pageYOffset;
             // console.log('windowScrollTop: ', windowScrollTop);
             let coordPortfolioTop = document.querySelector('.portfolio').getBoundingClientRect().top;
+            let coordClientsTop = document.querySelector('.clients').getBoundingClientRect().top;
             // console.log('coordPortfolioTop: ', coordPortfolioTop);
 
             if (windowScrollTop > 60 && windowScrollTop < 690) {
@@ -101,12 +102,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 headerBtn.style.display = 'block';
 
                 headerSubmit.classList.add('scrolled-back');
-                headerSlogan.classList.add('scrolled-back');
+                // headerSlogan.classList.add('scrolled-back');
 
-                // setTimeout(() => {
+                setTimeout(() => {
                     headerSubmit.style.display = 'none';
-                    headerSlogan.style.display = 'none';
-                // }, 600);
+                    // headerSlogan.style.display = 'none';
+                }, 300);
+
+                if (coordClientsTop <= 250) {
+                    headerSlogan.classList.add('scrolled-back');
+
+                    setTimeout(() => {
+                        headerSlogan.style.display = 'none';
+                    }, 300);    
+                } else if (coordClientsTop > 250) {
+                    headerSlogan.style.display = 'block';
+                    headerSlogan.classList.remove('scrolled-back');
+                }
                 // console.log('windowScrollTop: ', windowScrollTop);
             }
             // else if (coordPortfolioTop < 250 && headerContainer.classList.contains('header__container-mobile')) {

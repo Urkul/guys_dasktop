@@ -113,7 +113,7 @@
 
 .guys__letter-wrapper-item-2:hover .guys__letter-change:nth-of-type(2) {
     /* margin-left: -5px; */
-    margin-right: 2px;
+    margin-right: 1px;
 }
 
 .guys__letter-wrapper-item-3:hover .guys__letter-change:nth-of-type(2) {
@@ -276,7 +276,7 @@
 
 .guys__content-tagline {
     position: absolute;
-    bottom: -200px;
+    bottom: -280px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -294,11 +294,11 @@
 }
 
 .guys__content-tagline_arrow {
-    padding-top: 4px;
-    transform: translate(0, 15%);
+    padding-top: 80px;
+    transform: translate(0, 5%);
     transition: transform 0.2s ease-in-out;
 
-    animation: moving 1s infinite;
+    animation: moving 0.8s infinite;
     animation-direction: alternate-reverse;
     /* animation-direction: alternate, reverse; */
     /* &:hover {
@@ -598,7 +598,7 @@
     }
 
     .guys__content-tagline {
-        bottom: -180px;
+        /* bottom: -180px; */
     }
 }
 
@@ -681,7 +681,7 @@
     }
 
     .guys__content-tagline {
-        bottom: -280px;
+        /* bottom: -280px; */
     }
 
     .guys__letter-wrapper-item-1:hover .guys__letter-change:nth-of-type(1),

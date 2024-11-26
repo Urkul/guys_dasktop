@@ -240,8 +240,8 @@
 
 
 .header__nav-slogan {
-    font-family: "Inter", sans-serif;
-    font-size: 24px;
+    font-family: var(--second-family);
+    font-size: 18px;
     font-weight: 400;
     display: none;
     color: #000;
@@ -260,8 +260,10 @@
     font-size: 20px;
     font-weight: 400;
 
-    background-color: #4193EF;
-    border: 1px solid #4193EF;
+    /* background-color: #4193EF;
+    border: 1px solid #4193EF; */
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
     outline: none;
     transition: 0.2s;
 

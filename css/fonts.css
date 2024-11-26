@@ -59,3 +59,14 @@
         /* url('../fonts/FixelText-Regular.woff2') format('woff2'),
         url('../fonts/FixelText-Regular.woff') format('woff'); */
 }
+
+@font-face {
+    font-family: Geologica;
+    font-weight: 500;
+    font-display: swap;
+    src: local('GeologicaRoman Medium'), local('GeologicaRoman-Medium'), local('GeologicaRomanMedium'),
+        url('../fonts/GeologicaRoman-Medium.woff2') format('woff2'),
+        url('../fonts/GeologicaRoman-Medium.woff') format('woff');
+        /* url('../fonts/FixelText-Regular.woff2') format('woff2'),
+        url('../fonts/FixelText-Regular.woff') format('woff'); */
+}

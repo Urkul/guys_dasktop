@@ -92,6 +92,17 @@
     text-indent: 30%;
 }
 
+.case-slogan__text p .finger {
+    display: inline-block;
+    transform: rotate(210deg);
+}
+
+.case-slogan__text a {
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+}
+
 .case-slogan__text2 {
     max-width: 970px;
     padding-top: 167px;
@@ -143,6 +154,10 @@
     border-radius: 5px;
 }
 
+.case-slogan__img.case-slogan__img-brd {
+    border-radius: 0px;
+}
+
 .case-slogan-bg .case-slogan__img {
     height: 90vh;
 } 
@@ -153,7 +168,7 @@
 .case-slogan-bg3, 
 .case-slogan-bg4, 
 .case-slogan-bg5 {
-    padding-top: 32px;
+    padding-top: 24px;
     background-color: var(--bg-color-1);
     position: sticky;
 	top: 50px;
@@ -208,7 +223,8 @@
 	top: 58px;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    overflow: hidden;
 }
 
 .case-slogan__ticker-container {
@@ -294,7 +310,13 @@
 
 .case-slogan__ticker-item.case4-slogan__ticker-item {
     padding-top: 24px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
+}
+
+.case-slogan__ticker-item.case-slogan__ticker-item_font {
+    font-size: 47px;
+    padding-top: 19px;
+    padding-bottom: 10px;
 }
 
 .case3-slogan__ticker-item {
@@ -732,6 +754,12 @@
         padding-bottom: 10px;
     }
 
+    .case-slogan__ticker-item.case-slogan__ticker-item_font {
+        font-size: 36px;
+        padding-top: 14px;
+        padding-bottom: 9px;
+    }
+
     .case-slogan-bg2, .case-slogan-bg4, .case-slogan-bg5 {
         padding-top: 15px;
         top: 67px;
@@ -818,7 +846,7 @@
     }
 
     .case-slogan-bg3 {
-        position: relative;
+        /* position: relative; */
     }
 
     .case-slogan__img-wrapper {
@@ -950,13 +978,17 @@
     }
 
     .case-slogan-bg3 {
-        top: 0px;
+        top: -50px;
         padding-bottom: 0;
     }
 
     .case-slogan-bg3 .case-slogan__img,
     .case11-slogan-bg2 .case-slogan__img {
         height: 373px;
+    }
+
+    .case-slogan-bg3 {
+        height: 100%;
     }
 
     .case-slogan-bg4 .case-slogan__img {
@@ -984,6 +1016,8 @@
     .case-slogan__slider {
         height: 100%;
         padding-bottom: 50px;
+
+        /* margin-top: 60px; */
     }
 
     .case-slogan__slider-container {

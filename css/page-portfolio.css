@@ -66,6 +66,9 @@
 .list-portfolio__item-wrapper {
     position: relative;
     display: none;
+
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .block {
@@ -81,7 +84,7 @@
     height: 578px;
     background-size: cover;
     background-position: center;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
 }
 
 .list-portfolio__item-bg.poligon_portfolio__item {
@@ -91,10 +94,9 @@
 .list-portfolio__item-bg:hover.poligon_portfolio__item {
     clip-path: polygon(0 24%, 5% 24%, 5% 18%, 11% 18%, 11% 12%, 16% 12%, 16% 6%, 22% 6%, 22% 0, 78% 0, 78% 6%, 83% 6%, 83% 12%, 89% 12%, 89% 18%, 95% 18%, 95% 24%, 100% 24%, 100% 76%, 94% 76%, 94% 82%, 89% 82%, 89% 88%, 83% 88%, 83% 94%, 78% 94%, 78% 100%, 21% 100%, 21% 94%, 16% 94%, 16% 88%, 10% 88%, 10% 82%, 5% 82%, 5% 76%, 0 76%);
     box-shadow: inset 0px 0px 100px 10px rgba(79, 79, 79, 0.75);
-    /* transform: scale(0.98); */
 }
 
-.list-portfolio__item-bg:hover {
+.list-portfolio__item-wrapper .list-portfolio__item-bg:hover {
     transform: scale(1.02);
 }
 
@@ -104,6 +106,12 @@
     font-size: 24px;
     line-height: 110%;
     color: var(--dark-text);
+    transition: 0.3s;
+}
+
+.list-portfolio__item-wrapper:hover .list-portfolio__item-name {
+    color: var(--accent);
+    transition: 0.3s;
 }
 
 .list-portfolio__item-links {
@@ -197,5 +205,14 @@
 
     .list-portfolio__item-bg {
         height: 358px;
+    }
+
+    .list-portfolio__item-bg.poligon_portfolio__item {
+        clip-path: polygon(0 24%, 0 18%, 0 12%, 0 7%, 0 0, 5% 0, 11% 0, 16% 0, 22% 0, 78% 0, 83% 0, 88% 0, 94% 0, 100% 0, 100% 6%, 100% 12%, 100% 19%, 100% 24%, 100% 76%, 100% 82%, 100% 88%, 100% 94%, 100% 100%, 94% 100%, 88% 100%, 83% 100%, 78% 100%, 21% 100%, 16% 100%, 10% 100%, 4% 100%, 0 100%, 0 94%, 0 88%, 0 81%, 0 76%);
+    }
+    
+    .list-portfolio__item-bg:hover.poligon_portfolio__item {
+        clip-path: polygon(0 24%, 0 18%, 0 12%, 0 7%, 0 0, 5% 0, 11% 0, 16% 0, 22% 0, 78% 0, 83% 0, 88% 0, 94% 0, 100% 0, 100% 6%, 100% 12%, 100% 19%, 100% 24%, 100% 76%, 100% 82%, 100% 88%, 100% 94%, 100% 100%, 94% 100%, 88% 100%, 83% 100%, 78% 100%, 21% 100%, 16% 100%, 10% 100%, 4% 100%, 0 100%, 0 94%, 0 88%, 0 81%, 0 76%);
+        box-shadow: inset 0px 0px 100px 10px rgba(79, 79, 79, 0.0);
     }
 }

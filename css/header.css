@@ -93,7 +93,7 @@
 }
 
 .header__nav {
-    display: block;
+    display: none;
 }
 
 .nav a {

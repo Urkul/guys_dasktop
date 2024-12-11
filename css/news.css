@@ -91,6 +91,8 @@
     padding-bottom: 12px;
     margin-left: -1px;
     transition: 0.3s;
+
+    width: 350px;
 }
 
 .news__text-description {
@@ -105,6 +107,8 @@
     max-height: 3.6em; 
     text-align: justify;  
     padding-right: 0.8em;
+
+    width: 350px;
 }
 
 .news__text-description:before {
@@ -219,7 +223,7 @@
 @media (max-width: 720px) {
     .news {
         /* margin-top: 110px; */
-        padding-top: 80px;
+        padding-top: 20px;
         position: relative;
         top: 0;
     }

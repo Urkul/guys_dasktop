@@ -48,40 +48,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ]);
 
-    validator.onSuccess((event) => {
-        const form = event.currentTarget;
+    // validator.onSuccess((event) => {
+    //     const form = event.currentTarget;
 
-        const popupThx = document.querySelector('.popup__thx');
-        const popupThxText = document.querySelector('.popup__thx-text');
+    //     const popupThx = document.querySelector('.popup__thx');
+    //     const popupThxText = document.querySelector('.popup__thx-text');
     
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: form.title.value,
-                name: form.name.value,
-                phone: form.phone.value,
-                company: form.company.value,
-                email: form.email.value,
-                textarea: form.textarea.value
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                form.reset();
-                // alert(`Спасибо, мы перезвоним вам в течении 10 минут. Ваша заявка № ${data.id}`);
-                popupThx.classList.add('active');
-                popupThxText.textContent = `Ваша заявка № ${data.id}`;
+    //     fetch('https://jsonplaceholder.typicode.com/posts', {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             title: form.title.value,
+    //             name: form.name.value,
+    //             phone: form.phone.value,
+    //             company: form.company.value,
+    //             email: form.email.value,
+    //             textarea: form.textarea.value
+    //         }),
+    //         headers: {
+    //             'Content-type': 'application/json; charset=UTF-8',
+    //         },
+    //     })
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             form.reset();
+    //             // alert(`Спасибо, мы перезвоним вам в течении 10 минут. Ваша заявка № ${data.id}`);
+    //             popupThx.classList.add('active');
+    //             popupThxText.textContent = `Ваша заявка № ${data.id}`;
         
-                scrollController.disabledScroll();
-            });
+    //             scrollController.disabledScroll();
+    //         });
 
-        setTimeout(function () {
-            popupThx.classList.remove('active');
-            scrollController.enabledScroll();
-        }, 5000);
-    });
+    //     setTimeout(function () {
+    //         popupThx.classList.remove('active');
+    //         scrollController.enabledScroll();
+    //     }, 5000);
+    // });
 
 });

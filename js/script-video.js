@@ -206,32 +206,32 @@ const videoBlockScroll = function (target) {
 // videoBlockScroll(guysVideoElement);
 
 if (windowWidth <= 890 && windowWidth > 860) {
-    guysVideoElement.style.width = windowWidth + 'px';
+    guysVideoElement.style.width = document.documentElement.scrollWidth + 'px';
     guysVideoElement.style.height = 520 + 'px';
     // guysVideoElement.style.height = 80 + 'vh';
     // guysVideoElement.style.top = 85 + 'vh';
-    guysVideoElement.style.top = 460 + 'px';
+    guysVideoElement.style.top = 480 + 'px';
 }
 else if (windowWidth <= 860 &&  windowWidth > 780) {
-    guysVideoElement.style.width = windowWidth + 'px';
+    guysVideoElement.style.width = document.documentElement.scrollWidth + 'px';
     guysVideoElement.style.height = 460 + 'px';
     // guysVideoElement.style.height = 80 + 'vh';
     guysVideoElement.style.top = 460 + 'px';
 }
 else if (windowWidth <= 780 &&  windowWidth > 720) {
-    guysVideoElement.style.width = windowWidth + 'px';
+    guysVideoElement.style.width = document.documentElement.scrollWidth + 'px';
     guysVideoElement.style.height = 420 + 'px';
     // guysVideoElement.style.height = 80 + 'vh';
     guysVideoElement.style.top = 400 + 'px';
 }
 else if (windowWidth <= 720 &&  windowWidth > 460) {
-    guysVideoElement.style.width = windowWidth + 'px';
+    guysVideoElement.style.width = document.documentElement.scrollWidth + 'px';
     guysVideoElement.style.height = 360 + 'px';
     // guysVideoElement.style.height = 80 + 'vh';
     guysVideoElement.style.top = 400 + 'px';
 }
 else if (windowWidth <= 460) {
-    guysVideoElement.style.width = windowWidth + 'px';
+    guysVideoElement.style.width = document.documentElement.scrollWidth + 'px';
     guysVideoElement.style.height = 360 + 'px';
     // guysVideoElement.style.height = 80 + 'vh';
     guysVideoElement.style.top = 520 + 'px';

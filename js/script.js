@@ -878,6 +878,70 @@ document.addEventListener('DOMContentLoaded', function () {
         //     }
         // });
         
+        
+        
+        gsap.registerPlugin(ScrollTrigger);
+        const tl = gsap.timeline();
+        // const tl2 = gsap.timeline();
+        
+        tl.fromTo('.header__logo path',
+            {
+                y: 30,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 0.15
+                // delay: 1
+            },
+        )
+        // tl2.fromTo('.guys__content .guys__letter-animat',
+        //     {
+        //         y: 300,
+        //         // opacity: 0,
+        //     },
+        //     {
+        //         y: 0,
+        //         // opacity: 1,
+        //         duration: 1,
+        //         stagger: 0.15
+        //         // delay: 1
+        //     },
+        // )
+
+        
+        // if (windowWidth <= 890) {
+
+        //     tl.fromTo('.guys__content-tagline_arrow',
+        //         {
+        //             y: -20,
+        //             opacity: 0,
+        //         },
+        //         {
+        //             y: 60,
+        //             opacity: 1,
+        //             duration: 1,
+        //             scale: 1.3,
+        //         },
+        //         2,
+        //     );
+            
+        //     gsap.from('.guys__video-block', {
+        //         scrollTrigger: {
+        //             trigger: '.guys',
+        //             markers: true,
+        //             start: 'top top',
+        //             end: '+=250px',
+        //             scrub: true,
+        //         },
+        //         yPercent: -80,
+        //         opacity: 0,
+        //         scale: 0,
+        //         transformOrigin: 'center center',
+        //     })
+        // }
     }
 
     scriptMain();

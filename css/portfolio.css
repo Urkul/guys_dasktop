@@ -72,6 +72,13 @@
     /* cursor: none; */
 }
 
+.portfolio__link-item.hover-link__orange:hover {
+    color: #fff;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+}
+
+
 .portfolio__link-wrapper a {
     display: none;
     position: relative;
@@ -138,7 +145,8 @@
 
 .portfolio__slider-img img {
     /* width: 660px; */
-    max-width: 100%;
+    /* max-width: 100%; */
+    /* height: 360px; */
     /* object-fit: cover; */
     border-radius: 5px;
 
@@ -674,7 +682,7 @@
     }
 
     .portfolio__container-title {
-        padding-top: 20px;
+        padding-top: 60px;
     }
 
     .portfolio__title {

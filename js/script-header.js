@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // }
             }
             // else if (windowScrollTop > 1300) {
-            else if (coordPortfolioTop < 250 && !headerContainer.classList.contains('header__container-mobile')) {
+            else if (coordPortfolioTop < 250 && !navbar.classList.contains('header__container-mobile')) {
                 navbar.classList.add('scrolled');
                 
                 headerNav.style.display = 'none';
@@ -121,12 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // console.log('windowScrollTop: ', windowScrollTop);
             }
-            // else if (coordPortfolioTop < 250 && headerContainer.classList.contains('header__container-mobile')) {
-            //     headerNav.style.display = 'block';
-            //     setTimeout(() => {
-            //         headerSubmit.style.display = 'block';
-            //     }, 600);
-            // }
+            else if (coordPortfolioTop < 250 && navbar.classList.contains('header__container-mobile')) {
+                headerNav.style.display = 'block';
+                setTimeout(() => {
+                    headerSubmit.style.display = 'block';
+                }, 300);
+            }
             else if (windowScrollTop <= 690) {
                 navbar.classList.remove('scrolled');
 

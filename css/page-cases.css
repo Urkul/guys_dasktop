@@ -159,7 +159,7 @@
 }
 
 .case-slogan-bg .case-slogan__img {
-    height: 90vh;
+    /* height: 90vh; */
 } 
 
 
@@ -938,7 +938,7 @@
     }
 
     .case-slogan.case6-slogan {
-        position: relative;
+        /* position: relative; */
     }
 
     .case-slogan__text {

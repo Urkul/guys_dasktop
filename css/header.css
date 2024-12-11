@@ -315,7 +315,10 @@
     display: none;
 
     position: absolute;
-    right: 110px;
+    /* right: 110px; */
+
+    right: 0;
+    z-index: 2;
 }
 
 .nav-icon-btn {
@@ -414,6 +417,8 @@
 .dropdown {
     position: relative;
     display: block;
+
+    opacity: 0;
 }
 
 .dropdown__button {
@@ -605,8 +610,8 @@
 }
 
 .header__container-mobile .header__nav__submit {
-    display: block;
-    right: 156px;
+    /* display: block; */
+    /* right: 156px; */
 }
 
 .header__container-mobile .dropdown__button {
@@ -698,7 +703,7 @@
     }
 
     .header__nav-btn {
-        right: 80px;
+        /* right: 80px; */
     }
 
     .header__container-mobile .nav__list a {
@@ -714,7 +719,7 @@
 
 @media (max-width: 460px) {
     .header__nav-btn {
-        right: 75px;
+        /* right: 75px; */
     }
 
     .header__container-mobile .nav__list a {
